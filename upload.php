@@ -6,6 +6,8 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
 
+    $root = dirname(__FILE__); 
+
     $servername = "127.0.0.1";
     $username = "letsysml_app";
     $password ="W.6xx@D95kd6Pws";
