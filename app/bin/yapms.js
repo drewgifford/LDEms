@@ -5673,7 +5673,7 @@ class SaveMap {
 
 		fetch("../upload.php", {
 			method: "POST",
-			body: formData
+			body: JSON.stringify(formData)
 		})
 		.then(response => response.text())
 		.then(data => {
