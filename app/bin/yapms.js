@@ -5671,7 +5671,7 @@ class SaveMap {
 		
 		formData.append("data", JSON.stringify(data));
 
-		fetch("http://localhost/upload.php", {
+		fetch("../upload.php", {
 			method: "POST",
 			body: formData
 		})
