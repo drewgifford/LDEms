@@ -35,7 +35,7 @@
     $file = fopen($root . '/maps/' . $id . '.txt', "w");
 
 
-    fwrite($file, serialize($_GET));
+    fwrite($file, json_encode($_GET));
     fclose($file);
     
 
