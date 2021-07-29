@@ -20,7 +20,7 @@
         die("Connection failed");
     }
 
-    $data = json_decode(file_get_contents('php://input'), true);
+    $data = $_POST;
 
     $str_allowed = 'abcdefghijklmnopqrstuvwxyz';
 
@@ -37,10 +37,10 @@
     $file = fopen($root . '/maps/' . $id . '.txt', "w");
 
 
-    fwrite($file, json_encode($data));
+    fwrite($file, json_encode($_POST));
     fclose($file);
 
-    echo 'letsdoelections.com/app?m=' . $id . " " . $id . '.txt' . $data['states'];
+    echo 'letsdoelections.com/app?m=' . $id . " " . $id . '.txt' . $_POST['states'];
     
 
 
