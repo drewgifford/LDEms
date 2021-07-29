@@ -321,6 +321,7 @@ function start() {
 	} else {
 		updateArticles();
 	}
+	alert("test")
 
 	if(php_load_map === true) {
 		let url = null;
@@ -339,8 +340,8 @@ function start() {
 	} else if(php_load_type_map === true) {
 		MapLoader.loadMapFromId(php_load_map_id);
 	} else {
-		PresetLoader.loadPreset("classic");
-		MapLoader.loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open");
+		PresetLoader.loadPreset('classic')
+		MapLoader.loadPresetMap('.res/lde/LDE_2012_house.svg', 16, 0.75, "1", "takeall_noedit", "open");
 	}
 
 	setTimeout(function() {

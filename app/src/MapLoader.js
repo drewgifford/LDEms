@@ -50,8 +50,13 @@ class MapLoader {
 
 	// Load map based off of php t parameter
 	static loadMapFromId(id) {
+		alert("WE ARE CURRENTLY TRYING TO LOAD" + id);
 		switch(id) {
-			case "USA_current_house":
+			case "LDE_2012_house":
+				PresetLoader.loadPreset('classic')
+				MapLoader.loadPresetMap('.res/lde/LDE_2012_house.svg', 16, 0.75, "1", "takeall_noedit", "open");
+				break;
+			/*case "USA_current_house":
 				PresetLoader.loadPreset('none');
 				MapLoader.loadPresetMap('usa/' + id, {enableCongress: true});
 				break;
@@ -501,10 +506,11 @@ class MapLoader {
 				//PresetLoader.loadPreset('classic');
 				//MapLoader.loadMap("./res/mock/yapmg.svg", 38, 0.25, "1", "proportional", "open");
 				//MapLoader.loadMap("./res/mock/yapmg.svg", 16, 0.75, "2", "takeall", "open");
-				//break;
+				//break;*/
 			default:
-				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "takeall", "open");
+				PresetLoader.loadPreset('classic')
+				MapLoader.loadPresetMap('.res/lde/LDE_2012_house.svg', 16, 0.75, "1", "takeall_noedit", "open");
+				//MapLoader.loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "takeall", "open");
 				break;
 		}
 	}

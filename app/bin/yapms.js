@@ -423,7 +423,7 @@ class Account {
 		mapPreview.src = "https://yapms.org/users/"  + Account.id + "/" + name + ".png#" + new Date().getTime();
 		mapPreview.alt = "No Preview";
 		mapPreview.onclick = (function() {
-			var url = "https://www.yapms.com/app/?u=" + Account.id + '&m=' + name;
+			var url = "https://www.letsdoelections.com/app/?u=" + Account.id + '&m=' + name;
 			return function() {
 				window.location.href = url;
 			}
@@ -433,7 +433,7 @@ class Account {
 		/* CREATE MAP LINK */
 		var mapBoxURL = document.createElement('div');
 		mapBoxURL.className = "mysaves-url";
-		var mapURL = document.createTextNode("https://www.yapms.com/app/?u=" + Account.id + "&m=" + name);
+		var mapURL = document.createTextNode("https://www.letsdoelections.com/app/?u=" + Account.id + "&m=" + name);
 		mapBoxURL.appendChild(mapURL);
 		mapBox.appendChild(mapBoxURL);
 
@@ -1327,6 +1327,8 @@ class LegendManager {
 
 	static updateLegend() {
 		for(var key in CandidateManager.candidates) {
+
+			
 			var candidate = CandidateManager.candidates[key];
 			var html = document.getElementById(candidate.name + '-text');
 
@@ -1474,22 +1476,22 @@ class LogoManager {
 		var logoSlot = document.getElementById("logo-div");
 		switch(name) {
 			case "LTE":
-			logoSlot.style.backgroundImage = 'url("https://www.yapms.com/app/res/logos/lte.png")';
+			logoSlot.style.backgroundImage = 'url("https://www.letsdoelections.com/app/res/logos/lte.png")';
 			break;
 			case "RedEagle":
-			logoSlot.style.backgroundImage = 'url("https://www.yapms.com/app/res/logos/redeagletv.png")';
+			logoSlot.style.backgroundImage = 'url("https://www.letsdoelections.com/app/res/logos/redeagletv.png")';
 			break;
 			case "PG":
-			logoSlot.style.backgroundImage = 'url("https://www.yapms.com/app/res/logos/pg.png")';
+			logoSlot.style.backgroundImage = 'url("https://www.letsdoelections.com/app/res/logos/pg.png")';
 			break;
 			case "EP":
-			logoSlot.style.backgroundImage = 'url("https://www.yapms.com/app/res/logos/ep.png")';
+			logoSlot.style.backgroundImage = 'url("https://www.letsdoelections.com/app/res/logos/ep.png")';
 			break;
 			case "RedDonkey":
-			logoSlot.style.backgroundImage = 'url("https://www.yapms.com/app/res/logos/reddonkey.png")';
+			logoSlot.style.backgroundImage = 'url("https://www.letsdoelections.com/app/res/logos/reddonkey.png")';
 			break;
 			case "PoliticalAnalyst":
-			logoSlot.style.backgroundImage = 'url("https://www.yapms.com/app/res/logos/pa.jpg")';
+			logoSlot.style.backgroundImage = 'url("https://www.letsdoelections.com/app/res/logos/pa.jpg")';
 			break;
 		}
 	
@@ -1658,7 +1660,7 @@ class MapLoader {
 			MapLoader.loadSavedMap(data);
 		}).catch(error => {
 			console.log("Map Loader: Did not find saved map");
-			MapLoader.loadMap('./res/usa_presidential.svg', 16, 1, 'usa_ec',"presidential", "open");
+			MapLoader.loadMap('./res/lde/LDE_presidential.svg', 16, 1, 'lde_2012_ec',"presidential", "open");
 
 			var notification = document.getElementById('notification');
 			var message = notification.querySelector('#notification-message');
@@ -1672,460 +1674,21 @@ class MapLoader {
 	// Load map based off of php t parameter
 	static loadMapFromId(id) {
 		switch(id) {
-			case "USA_current_house":
-				PresetLoader.loadPreset('none');
-				MapLoader.loadPresetMap('usa/' + id, {enableCongress: true});
+			case "LDE_2012_house":
+				PresetLoader.loadPreset("lde");
+				MapLoader.loadMap("./res/lde/LDE_2012_house.svg", 16, 0.75, "1", "takeall_noedit", "open");
 				break;
-			case "UnitedKingdom_current_parliament":
-				PresetLoader.loadPreset('none');
-				MapLoader.loadPresetMap('ukd/' + id);
+			case "LDE_presidential":
+				PresetLoader.loadPreset("lde");
+				MapLoader.loadMap("./res/lde/LDE_presidential.svg", 16, 0.75, "lde_2012_ec", "presidential", "open");
 				break;
-			case "USA_current_senate":
-			case "USA_2024_projection":
-			case "USA_2020_cook":
-			case "USA_2020_inside":
-			case "USA_2020_sabatos":
-			case "USA_2020_house_cook":
-			case "USA_2016_presidential":
-			case "USA_2016_presidential_county":
-			case "USA_2016_democratic_primary":
-			case "USA_2016_republican_primary":
-			case "USA_2012_presidential":
-			case "USA_2008_presidential":
-			case "USA_2004_presidential":
-			case "USA_2000_presidential":
-			case "USA_1996_presidential":
-			case "USA_1992_presidential":
-			case "USA_1988_presidential":
-			case "USA_1984_presidential":
-			case "USA_1980_presidential":
-			case "USA_1976_presidential":
-			case "USA_1972_presidential":
-			case "USA_1968_presidential":
-			case "USA_1964_presidential":
-			case "USA_1960_presidential":
-			case "USA_1956_presidential":
-			case "USA_1952_presidential":
-			case "USA_1948_presidential":
-			case "USA_1944_presidential":
-			case "USA_1940_presidential":
-			case "USA_1936_presidential":
-			case "USA_1932_presidential":
-			case "USA_1928_presidential":
-			case "USA_1924_presidential":
-			case "USA_1920_presidential":
-			case "USA_1916_presidential":
-			case "USA_1912_presidential":
-			case "USA_1908_presidential":
-			case "USA_1904_presidential":
-			case "USA_1900_presidential":
-			case "USA_1896_presidential":
-			case "USA_1892_presidential":
-			case "USA_1888_presidential":
-			case "USA_1884_presidential":
-			case "USA_1880_presidential":
-			case "USA_1876_presidential":
-			case "USA_1872_presidential":
-			case "USA_1868_presidential":
-			case "USA_1864_presidential":
-			case "USA_1789_presidential":
-			case "USA_1792_presidential":
-			case "USA_1796_presidential":
-			case "USA_1800_presidential":
-			case "USA_1804_presidential":
-			case "USA_1808_presidential":
-			case "USA_1812_presidential":
-			case "USA_1816_presidential":
-			case "USA_1820_presidential":
-			case "USA_1824_presidential":
-			case "USA_1828_presidential":
-			case "USA_1832_presidential":
-			case "USA_1836_presidential":
-			case "USA_1840_presidential":
-			case "USA_1844_presidential":
-			case "USA_1848_presidential":
-			case "USA_1852_presidential":
-			case "USA_1856_presidential":
-			case "USA_1860_presidential":
-				PresetLoader.loadPreset('none');
-				MapLoader.loadPresetMap('usa/' + id);
+			case "LDE_senate":
+				PresetLoader.loadPreset("lde");
+				MapLoader.loadMap("./res/lde/LDE_senate.svg", 16, 0.75, "1", "takeall_noedit", "open");
 				break;
-			case "USA_trump_impeachment_support":
-				PresetLoader.loadPreset('none');
-				MapLoader.loadPresetMap('usa/' + id, {enableCongress: true});
-				break;
-			case "Canada_2019_house_of_commons":
-				PresetLoader.loadPreset('none');
-				MapLoader.loadPresetMap('can/' + id);
-				break;
-			case "Alabama_2020_state_lower":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/alabama/2020_house.svg", 16, 0.15, "1", "takeall_noedit", "open");
-				break;
-			case "Alaska_2020_state_lower":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/alaska/2020_house.svg", 16, 0.02, "1", "takeall_noedit", "open");
-				break;
-			case "Arkansas_2020_state_upper":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/arkansas/2020_upper.svg", 16, 4.5, "1", "takeall_noedit", "open");
-				break;
-			case "Arkansas_2020_state_lower":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/arkansas/2020_house.svg", 16, 150, "1", "takeall_noedit", "open");
-				break;
-			case "California_2020_state_upper":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/california/2020_upper.svg", 16, 0.25, "1", "takeall_noedit", "open");
-				break;
-			case "California_2020_state_lower":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/california/2020_house.svg", 16, 0.1, "1", "takeall_noedit", "open");
-				break;
-			case "Colorado_2020_state_lower":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/colorado/2020_house.svg", 16, 0.15, "1", "takeall_noedit", "open");
-				break;
-			case "Connecticut_2020_state_lower":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/connecticut/2020_house.svg", 16, 0.5, "1", "takeall_noedit", "open");
-				break;
-			case "Florida_2020_state_upper":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/florida/2020_upper.svg", 16, 0.3, "1", "takeall_noedit", "open");
-				break;
-			case "Florida_2020_state_lower":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/florida/2020_house.svg", 16, 0.25, "1", "takeall_noedit", "open");
-				break;
-			case "Hawaii_2020_state_lower":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/hawaii/2020_house.svg", 16, 0.2, "1", "takeall_noedit", "open");
-				break;
-			case "Idaho_2020_state_upper":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/idaho/2020_house.svg", 16, 0.2, "1", "takeall_noedit", "open");
-				break;
-			case "Idaho_2020_state_lower":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/idaho/2020_house.svg", 16, 0.2, "2", "proportional", "open");
-				break;
-			case "Iowa_2020_state_lower":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/iowa/2020_house.svg", 16, 0.2, "1", "takeall_noedit", "open");
-				break;
-			case "Iowa_2020_state_upper":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/iowa/2020_senate.svg", 16, 0.2, "1", "takeall_noedit", "open");
-				break;
-			case "Michigan_2020_state_lower":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/michigan/2020_house.svg", 16, 0.2, "1", "takeall_noedit", "open");
-				break;
-			case "Minnesota_2020_state_upper":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/minnesota/2020_upper.svg", 16, 0.5, "1", "takeall_noedit", "open");
-				break;
-			case "Minnesota_2020_state_lower":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/minnesota/2020_house.svg", 16, 0.5, "1", "takeall_noedit", "open");
-				break;
-			case "NewJersey_2020_state_upper":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/newjersey/2020_house.svg", 16, 0.1, "1", "takeall_noedit", "open");
-				break;
-			case "NewJersey_2020_state_lower":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/newjersey/2020_house.svg", 16, 0.1, "2", "proportional", "open");
-				break;
-			case "NewMexico_2020_state_lower":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/newmexico/2020_house.svg", 16, 0.1, "1", "takeall_noedit", "open");
-				break;
-			case "NorthCarolina_2020_state_upper":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/northcarolina/2020_senate.svg", 16, 0.5, "1", "takeall_noedit", "open");
-				break;
-			case "NorthDakota_2020_state_upper":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/northdakota/2020_upper.svg", 16, 0.1, "1", "takeall_noedit", "open");
-				break;
-			case "NorthDakota_2020_state_lower":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/northdakota/2020_house.svg", 16, 0.1, "2", "proportional", "open");
-				break;
-			case "Ohio_2020_state_upper":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/ohio/2020_upper.svg", 16, 0.05, "1", "takeall_noedit", "open");
-				break;
-			case "Ohio_2020_state_lower":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/ohio/2020_lower.svg", 16, 0.1, "1", "takeall_noedit", "open");
-				break;
-			case "Oregon_2020_state_upper":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/oregon/2020_upper.svg", 16, 0, "1", "takeall_noedit", "open");
-				break;
-			case "Oregon_2020_state_lower":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/oregon/2020_house.svg", 16, 0.1, "1", "takeall_noedit", "open");
-				break;
-			case "Pennsylvania_2020_state_upper":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/pennsylvania/2020_upper.svg", 16, 0.5, "1", "takeall_noedit", "open");
-				break;
-			case "Pennsylvania_2020_state_lower":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/pennsylvania/2020_house.svg", 16, 0.25, "1", "takeall_noedit", "open");
-				break;
-			case "SouthDakota_2020_state_lower":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/southdakota/2020_house.svg", 16, 1, "1", "takeall_noedit", "open");
-				break;
-			case "Texas_2020_state_upper":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/texas/2020_upper.svg", 16, 0.75, "1", "takeall_noedit", "open");
-				break;
-			case "Texas_2020_state_lower":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/texas/2020_house.svg", 16, 0.5, "1", "takeall_noedit", "open");
-				break;
-			case "Virginia_2020_state_upper":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/virginia/2020_senate.svg", 16, 0.015, "1", "takeall_noedit", "open");
-				break;
-			case "Virginia_2020_state_lower":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/virginia/2020_house.svg", 16, 0.015, "1", "takeall_noedit", "open");
-				break;
-			case "Washington_2020_state_upper":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/washington/2020_house.svg", 16, 0.15, "1", "takeall_noedit", "open");
-				break;
-			case "Washington_2020_state_lower":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/washington/2020_house.svg", 16, 0.15, "2", "proportional", "open");
-				break;
-			case "Wisconsin_2020_state_lower":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/wisconsin/2020_house.svg", 16, 0.5, "1", "takeall_noedit", "open");
-				break;
-			case "USA_presidential_territories":
-				PresetLoader.loadPreset("classic");
-				MapLoader.loadMap("./res/usa/presidential/usa_presidential_territories.svg", 16, 0.75, "usa_territories_ec", "takeall", "open");
-				break;
-			case "USA_2024_presidential":
-				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/usa/presidential/usa_presidential.svg", 16, 0.75, "usa_2024_ec", "takeall", "open");
-				break;
-			case "USA_2020_presidential":
-				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/usa/presidential/usa_presidential.svg", 16, 0.75, "usa_ec", "takeall", "open");
-				break;
-			case "USA_split_maine":
-				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/usa/presidential/usa_1972_presidential.svg", 16, 0.75, "usa_1972_ec", "takeall", "open");
-				break;
-			case "USA_2022_senate":
-				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/usa/senate/usa_senate.svg", 16, 1, "1", "senatorial", "2022");
-				break;
-			case "USA_2020_senate":
-				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/usa/senate/usa_senate.svg", 16, 1, "1", "senatorial", "2020");
-				break;
-			case "USA_2022_governors":
-				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/usa/governors/usa_gubernatorial.svg", 16, 0.75, "1", "gubernatorial", "2022");
-				break;
-			case "USA_2020_governors":
-				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/usa/governors/usa_gubernatorial.svg", 16, 0.75, "1", "gubernatorial", "2020");
-				break;
-			case "USA_2020_democratic_primary":
-				PresetLoader.loadPreset('democratic primary');
-				MapLoader.loadMap("./res/usa/primary/usa_dem_primary.svg", 16, 0.75, "dem_primary", "proportional", "open");
-				break;
-			case "USA_2020_republican_primary":
-				PresetLoader.loadPreset('republican primary');
-				MapLoader.loadMap("./res/usa/primary/usa_rep_primary.svg", 16, 0.75, "rep_primary", "proportional", "open");
-				break;
-			case "USA_county":
-				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/usa/county/usa_county.svg", 16, 0.075, "1", "takeall_noedit", "open");
-				break;
-			case "USA_2022_house":
-			case "USA_2020_house":
-				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/usa/house/12-2-2019-house.svg", 16, 0.075, "1", "takeall_noedit", "open", {enableCongress: true, enableEraser: true});
-				break;
-			case "USA_2008_house":
-				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/usa/house/usa_congressional_2008.svg", 16, 0.005, "1", "takeall_noedit", "open");
-				break;
-			case "USA_governors":
-				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/usa/governors/usa_gubernatorial.svg", 16, 0.75, "1", "gubernatorial", "open");
-				break;
-			case "USA_senate":
-				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/usa/senate/usa_senate.svg", 16, 0.75, "1", "senatorial", "open");
-				break;
-			case "USA_takeall":
-				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/usa/presidential/usa_no_districts.svg", 16, 0.75, "usa_no_districts_ec", "takeall", "open");
-				break;
-			case "USA_proportional":
-				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/usa/presidential/usa_no_districts.svg", 16, 0.75, "usa_no_districts_ec", "proportional", "open");
-				break;
-			case "USA_pre_civilwar":
-				MapLoader.loadMap("./res/usa/presidential/usa_pre_civilwar.svg", 16, 0.75, "usa_pre_civilwar_ec", "presidential", "open");
-				break;
-			case "Pakistan_national_assembly":
-				PresetLoader.loadPreset('pakistan');
-				MapLoader.loadMap("./res/pak/pakistan_constituencies.svg", 16, 0.02, "1", "takeall_noedit", "open");
-				break;
-			case "Argentina_chamber_of_deputies":
-				PresetLoader.loadPreset('argentina');
-				MapLoader.loadMap("./res/arg/argentina_provinces_buenos.svg", 16, 0.75, "argentina_chamber_of_deputies", "proportional", "open");
-				break;
-			case "India_2019_lok_sabha":
-				PresetLoader.loadPreset('none');
-				MapLoader.loadPresetMap('ind/' + id);
-				break;
-			case "USA_Canada":
-				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/other/usa_canada.svg", 16, 0.01, "1", "takeall", "open");
-				break;
-			case "Germany_states":
-				PresetLoader.loadPreset('germany')
-				MapLoader.loadMap("./res/deu/germany.svg", 16, 1, "1", "takeall", "open");
-				break;
-			case "Germany_bundestag":
-				PresetLoader.loadPreset('germany')
-				MapLoader.loadMap("./res/deu/germany_constituencies.svg", 16, 0.25, "1", "takeall_noedit", "open");
-				break;
-			case "France_national_assembly":
-				PresetLoader.loadPreset('france')
-				MapLoader.loadMap("./res/fra/france_constituencies.svg", 16, 0.25, "1", "takeall_noedit", "open");
-				break;
-			case "Netherlands_provinces":
-				PresetLoader.loadPreset('netherlands');
-				MapLoader.loadMap("./res/nld/netherlands_provinces.svg", 16, 0.15, "netherlands_provinces", "proportional", "open");
-				break;
-			case "Netherlands_gemeenten":
-				PresetLoader.loadPreset('netherlands');
-				MapLoader.loadMap("./res/nld/netherlands_gemeenten.svg", 16, 0.15, "1", "takeall_noedit", "open");
-				break;
-			case "Italy_states":
-				PresetLoader.loadPreset('italy')
-				MapLoader.loadMap("./res/ita/italy.svg", 16, 1, "1", "takeall_noedit", "open");
-				break;
-			case "Portugal_assembly_of_the_republic":
-				PresetLoader.loadPreset('portugal');
-				MapLoader.loadMap("./res/prt/portugal_constituencies.svg", 16, 0.25, "portugal_constituencies", "proportional", "open");
-				break;
-			case "Poland":
-				PresetLoader.loadPreset('portugal');
-				MapLoader.loadMap("./res/pol/poland_senate.svg", 16, 0.25, "1", "takeall_noedit", "open");
-				break;
-			case "Spain_congress_of_deputies":
-				PresetLoader.loadPreset('spain');
-				MapLoader.loadMap("./res/esp/spain_constituencies.svg", 16, 0.25, "spain_constituencies", "proportional", "open");
-				break;
-			case "Sweden_riksdag":
-				PresetLoader.loadPreset('sweden');
-				MapLoader.loadMap("./res/swe/sweden_districts.svg", 25, 0.25, "sweden_riksdag", "proportional", "open");
-				break;
-			case "Turkey_national_assembly":
-				PresetLoader.loadPreset('turkey');
-				MapLoader.loadMap("./res/tur/turkey_provinces.svg", 16, 0.5, "turkey_national_assembly", "proportional", "open");
-				break;
-			case "India_lok_sabha":
-				PresetLoader.loadPreset('india');
-				MapLoader.loadMap("./res/ind/india_constituencies.svg", 16, 0.1, "1", "takeall_noedit", "open");
-				break;
-			case "SouthAfrica_national_assembly":
-				PresetLoader.loadPreset('southafrica');
-				MapLoader.loadMap("./res/zaf/south_africa_provinces.svg", 25, 0.25, "south_africa_national_assembly", "proportional", "open");
-				break;
-			case "UnitedKingdom_house_of_commons":
-				PresetLoader.loadPreset('uk')
-				MapLoader.loadMap("./res/ukd/unitedkingdom.svg", 16, 0.075, "1", "takeall_noedit", "open");
-				break;
-			case "UnitedKingdom_historic_counties":
-				PresetLoader.loadPreset('uk')
-				MapLoader.loadMap("./res/ukd/unitedkingdom_historic_counties.svg", 16, 0.4, "1", "takeall", "open");
-				break;
-			case "Ukraine":
-				PresetLoader.loadPreset('uk')
-				MapLoader.loadMap("./res/ukr/ukraine.svg", 16, 0.1, "1", "takeall_noedit", "open");
-				break;
-			case "Ireland_dail_eireann":
-				PresetLoader.loadPreset('ireland')
-				MapLoader.loadMap("./res/irl/ireland_constituencies_2020.svg", 16, 0.075, "ireland_constituencies", "proportional", "open");
-				break;
-			case "Canada_provinces":
-				PresetLoader.loadPreset('canada')
-				MapLoader.loadMap("./res/can/canada_states.svg", 38, 2, "1", "takeall", "open");
-				break;
-			case "Canada_house_of_commons":
-				PresetLoader.loadPreset('canada')
-				MapLoader.loadMap("./res/can/canada_constituencies.svg", 16, 0.1, "1", "takeall_noedit", "open");
-				break;
-			case 'Australia_house_of_representatives':
-				PresetLoader.loadPreset('australia')
-				MapLoader.loadMap("./res/aus/australia_constituencies.svg", 16, 0.1, "1", "takeall_noedit", "open");
-				break;
-			case "Australia_states":
-				PresetLoader.loadPreset('australia')
-				MapLoader.loadMap("./res/aus/australia.svg", 16, 0.075, "1", "takeall", "open");
-				break;
-			case 'Brazil_chamber_of_deputies':
-				PresetLoader.loadPreset('brazil');
-				MapLoader.loadMap("./res/bra/brazil_states.svg", 16, 50, "brazil_deputies", "proportional", "open");
-				break;
-			case 'Brazil_federal_senate':
-				PresetLoader.loadPreset('brazil');
-				MapLoader.loadMap('./res/bra/brazil_states.svg', 16, 50, "3", "proportional", "open");
-				break;
-			case 'Russia_federal_council':
-				PresetLoader.loadPreset('russia');
-				MapLoader.loadMap('./res/rus/russia_federal_subjects.svg', 16, 0.25, '2', 'proportional', 'open');
-				break;
-			case 'Russia_duma':
-				PresetLoader.loadPreset('russia');
-				MapLoader.loadMap('./res/rus/russia_constituencies.svg', 16, 0.15, 'duma', 'takeall_noedit', 'open');
-				break;
-			case "Trinidad_Tobago_house_of_representatives":
-				PresetLoader.loadPreset('trinidad_tobago');
-				MapLoader.loadMap("./res/tto/trinidad_tobago_house_of_representatives.svg", 16, 0.25, "1", "takeall_noedit", "open");
-				break;
-			case "Switzerland_national_council":
-				PresetLoader.loadPreset('switzerland');
-				MapLoader.loadMap("./res/che/switzerland_cantons.svg", 16, 0.25, "switzerland_national_council", "proportional", "open");
-				break;
-			case "Switzerland_council_of_states":
-				PresetLoader.loadPreset('switzerland');
-				MapLoader.loadMap("./res/che/switzerland_cantons.svg", 16, 0.25, "switzerland_council_of_states", "proportional", "open");
-				break;
-			case "EuropeanUnion":
-				PresetLoader.loadPreset('eu');
-				MapLoader.loadMap("./res/eu/eu.svg", 16, 0.25, "eu_parliament", "proportional", "open");
-				break;
-			case "World":
-				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/other/world.svg", 38, 0.25, "1", "takeall", "open");
-				break;
-			case "YAPmg":
-				//PresetLoader.loadPreset('classic');
-				//MapLoader.loadMap("./res/mock/yapmg.svg", 38, 0.25, "1", "proportional", "open");
-				//MapLoader.loadMap("./res/mock/yapmg.svg", 16, 0.75, "2", "takeall", "open");
-				//break;
 			default:
-				PresetLoader.loadPreset('classic');
-				MapLoader.loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "takeall", "open");
+				PresetLoader.loadPreset("lde");
+				MapLoader.loadMap("./res/lde/LDE_2012_house.svg", 16, 0.75, "1", "takeall_noedit", "open");
 				break;
 		}
 	}
@@ -2200,6 +1763,7 @@ class MapLoader {
 
 		/* TURNING OFF LABELS BREAKS THE LEANS ON THE GRAPH */
 		strokeMultiplier = strokewidth;
+		strokeMultiplier = 0.5;
 		var dataname = './data/' + type + '_' + year;
 
 		console.log('Loading ' + filename);
@@ -2634,6 +2198,9 @@ class PresetLoader {
 		switch(value) {
 			case 'none':
 				break;
+			case 'lde':
+				PresetLoader.loadPresetLDE();
+				break;
 			case 'classic':
 				PresetLoader.loadPresetClassic();
 				break;
@@ -2713,9 +2280,37 @@ class PresetLoader {
 	}
 
 	// republicans vs democrats
-	static loadPresetClassic() {
+
+	static loadPresetLDE() {
 		var republican = new Candidate('Republican', 
 			['#bf1d29', '#ff5865', '#ff8b98', '#cf8980']);
+		var labor = new Candidate('Labor',
+			['#27a7a4', '#57DBD9', '#97F7F6', '#A5C5C5']);
+		var ppa = new Candidate('People\'s',
+			['#ff6c00', '#FF9D57', '#FDC49B', '#C4A287']);
+		var libdem = new Candidate('LibDem',
+			['#ffd800', '#FDE977', '#F3E9AF', '#D0C58B']);
+		var akip = new Candidate('AKIP',
+			['#1d1aa8', '#5250F7', '#AAA8FF', '#8D8DAA']);
+		var ind = new Candidate('Independent',
+			['#595959', '#949494', '#CFCFCF', '#F2F2F2']);
+		/*var ppa;
+		var libdem;
+		var akip;
+		var ind;*/
+
+		CandidateManager.candidates['Republican'] = republican;
+		CandidateManager.candidates['Labor'] = labor;
+		CandidateManager.candidates['People\'s'] = ppa;
+		CandidateManager.candidates['LibDem'] = libdem;
+		CandidateManager.candidates['AKIP'] = akip;
+		CandidateManager.candidates['Independent'] = ind;
+	}
+
+
+	static loadPresetClassic() {
+		var republican = new Candidate('Republican', 
+			['#f00034', '#ff5865', '#ff8b98', '#cf8980']);
 		var democrat = new Candidate('Democrat',
 			['#1c408c', '#577ccc', '#8aafff', '#949bb3']);
 
@@ -3632,12 +3227,7 @@ class State {
 		// update the html text display
 		const stateText = document.getElementById(this.name + '-text');
 		if(stateText !== null && 
-			(MapLoader.save_dataid === "usa_ec" ||
-			MapLoader.save_dataid === "usa_1972_ec" ||
-			MapLoader.save_dataid === "usa_no_districts_ec" ||
-			MapLoader.save_dataid === "usa_pre_civilwar_ec" ||
-			MapLoader.save_dataid === "usa_territories_ec" ||
-			MapLoader.save_dataid === "usa_2024_ec")) {
+			(MapLoader.save_dataid === "lde_2012_ec")) {
 			const text = this.name + ' ' + value;
 			// the text elements in an svg are inside spans
 			if(typeof stateText.childNodes[1] !== 'undefined') {
@@ -4691,49 +4281,9 @@ function db_getCongress(onLoad) {
 	});
 }
 var GlobalData = {
-'argentina_chamber_of_deputies': {'Buenos Aires': 70, 'Buenos Aires City': 25, 'Catamarca': 5, 'Chaco': 7, 'Chubut': 5, 'Córdoba': 18, 'Corrientes': 7, 'Entre Ríos': 9, 'Formosa': 5, 'Jujuy': 6, 'La Pampa': 5, 'La Rioja': 5, 'Mendoza': 10, 'Misiones': 7, 'Neuquén': 5, 'Río Negro': 5, 'Salta': 7, 'San Juan': 6, 'San Luis': 5, 'Santa Cruz': 5, 'Santa Fe': 19, 'Santiago del Estero': 7, 'Tierra del Fuego': 5, 'Tucumán': 9},
+'lde_2012_ec': {'AL': 7, 'AK': 4, 'AZ': 11, 'AR': 5, 'CA': 57, 'CO': 10, 'CT': 5, 'DE': 3, 'FL': 29, 'GA': 16, 'HI': 4, 'ID': 5, 'IL': 20, 'IN': 11, 'IA': 6, 'KS': 6, 'KY': 8, 'LA': 7, 'ME': 3, 'MD': 9, 'MA': 10, 'MI': 16, 'MN': 10, 'MS': 4, 'MO': 10, 'MT': 3, 'NE': 5, 'NV': 7, 'NH': 3, 'NJ': 14, 'NM': 7, 'NY': 28, 'NC': 15, 'ND': 3, 'OH': 22, 'OK': 6, 'OR': 7, 'PA': 20, 'RI': 3, 'SC': 8, 'SD': 3, 'TN': 9, 'TX': 39, 'UT': 5, 'VT': 3, 'VA': 15, 'WA': 12, 'WV': 7, 'WI': 12, 'WY': 3, 'DC': 3, 'PR': 7},
 
-'turkey_national_assembly': {'Adana': 15, 'Adıyaman':5, 'Afyonkarahisar':6, 'Ağrı':4, 'Aksaray':4, 'Amasya':3, 'Ankara':36, 'Antalya':16, 'Ardahan':2, 'Artvin':2, 'Aydın':8, 'Balıkesir':9, 'Bartın':2, 'Batman': 5, 'Bayburt':1, 'Bilecik':2, 'Bingöl':3, 'Bitlis':3, 'Bolu':3, 'Burdur':3, 'Bursa':20, 'Çanakkale':4, 'Çankırı':2, 'Çorum':4, 'Denizli':8, 'Diyarbakır':12, 'Düzce':3, 'Edirne':4, 'Elazığ':5, 'Erzincan':2, 'Erzurum':6, 'Eskişehir':7, 'Gaziantep':14, 'Giresun':4, 'Gümüşhane':2, 'Hakkâri':3, 'Hatay':11, 'Iğdır':2, 'Isparta':4, 'İstanbul':98, 'İzmir':28, 'Kahramanmaraş':8, 'Kars':3, 'Kastamonu':3, 'Karabük':3, 'Karaman':3, 'Kayseri':10, 'Kilis':2, 'Kırklareli':3, 'Kırıkkale':3, 'Kırşehir':2, 'Kocaeli':13, 'Konya':15, 'Kütahya':5, 'Malatya':6, 'Manisa':10, 'Mardin':6, 'Mersin':13, 'Muğla':7, 'Muş':4, 'Nevşehir':3, 'Niğde':3, 'Ordu':6, 'Osmaniye':4, 'Rize':3, 'Sakarya':7, 'Samsun':9, 'Siirt':3, 'Sinop':2, 'Sivas':5, 'Şanlıurfa':14, 'Şırnak':4, 'Tekirdağ':7, 'Tokat':5, 'Trabzon':6, 'Tunceli':2, 'Uşak':3, 'Van':8, 'Yalova':3, 'Yozgat':4, 'Zonguldak':5},
-
-'south_africa_national_assembly': {'Eastern Cape': 25, 'Western Cape': 23, 'Northern Cape': 5, 'Gauteng': 48, 'KwaZulu': 41, 'Limpopo': 19, 'Mpumalanga': 15, 'Free State': 11, 'North West Cape': 13, 'South Africa': 200},
-
-'portugal_constituencies': {'Lisbon': 47, 'Porto': 39, 'Braga': 19, 'Setúbal': 18, 'Aveiro': 16, 'Leiria': 10, 'Coimbra': 9, 'Faro': 9, 'Santarém': 9, 'Viseu': 9, 'Madeira': 6, 'Viana do Castelo': 6, 'Azores': 5, 'Vila Real': 5, 'Guarda': 4, 'Castelo Branco': 4, 'Beja': 3, 'Bragança': 3, 'Évora': 3, 'Portalegre': 2, 'Europe': 2, 'Outside Europe': 2},
-
-'ireland_constituencies': {'Donegal': 5, 'Sligo-Leitrim': 4, 'Mayo': 4, 'Galway West': 5, 'Clare': 4, 'Kerry': 5, 'Cork South-West': 3, 'Cork North-West': 3, 'Limerick County': 3, 'Limerick City': 4, 'Cork South-Central': 4, 'Cork North-Central': 4, 'Cork East': 4, 'Waterford': 4, 'Tipperary': 5, 'Carlow-Kilkenny': 5, 'Wexford': 5, 'Wicklow': 5, 'Kildare North': 4, 'Kildare South': 4, 'Laois-Offaly': 5, 'Galway East': 3, 'Roscommon-Galway': 3, 'Longford-Westmeath': 4, 'Meath West': 3, 'Meath East': 3, 'Louth': 5, 'Cavan-Monaghan': 5, 'Dublin Fingal': 5, 'Dublin West': 4, 'Dublin North-West': 3, 'Dublin Bay North': 5, 'Dublin Mid-West': 4, 'Dublin South-Central': 4, 'Dublin Central': 4, 'Dublin Bay South': 4, 'Dublin South-West': 5, 'Dublin Rathdown': 3, 'Dún Laoghaire': 4},
-
-'brazil_deputies':{'São Paulo': 70, 'Minas Gerais': 53, 'Rio de Janeiro': 46, 'Bahia': 39, 'Rio Grande do Sul': 31, 'Paraná': 30, 'Pernambuco': 25, 'Ceará': 22, 'Maranhão': 18, 'Goiás': 17, 'Pará': 17, 'Santa Catarina': 16, 'Paraíba': 12, 'Espírito Santo': 10, 'Piauí': 10, 'Alagoas': 9, 'Acre': 8, 'Amazonas': 8, 'Amapá': 8, 'Distrito Federal do Brasil': 8, 'Mato Grosso do Sul': 8, 'Mato Grosso': 8, 'Rio Grande do Norte': 8, 'Rondônia': 8, 'Roraima': 8, 'Sergipe': 8, 'Tocantins': 8},
-
-'netherlands_provinces':{'Groningen': 43, 'Friesland': 43, 'Drenthe': 41, 'Overijssel': 47, 'Flevoland': 41, 'Gelderland': 55, 'Utrecht': 49, 'Noord-Holland': 55, 'Zuid-Holland': 55, 'Zeeland': 39, 'Noord-Brabant': 55, 'Limburg': 47},
-
-'spain_constituencies': {'La Coruña': 8, 'Pontevedra': 7, 'Lugo': 4, 'Orense': 4, 'Asturias': 7, 'León': 4,'Zamora': 3, 'Salamanca': 4, 'Cáceres': 4, 'Badajoz': 6, 'Huelva': 5, 'Seville': 12, 'Cádiz': 9, 'Cordoba': 6, 'Málaga': 11, 'Granada': 7, 'Almeria': 6, 'Jaen': 5, 'Murcia': 10, 'Alicante': 12, 'Albacete': 4, 'Ciudad Real': 5, 'Toledo': 6, 'Cuenca': 3, 'Valencia': 15, 'Castellón': 5, 'Teruel': 3, 'Guadalajara': 3, 'Madrid': 37, 'Avila': 3, 'Segovia': 3, 'Valladolid': 5, 'Palencia': 3, 'Burgos': 4, 'Soria': 2, 'Zaragoza': 7, 'Tarragona': 6, 'Barcelona': 32, 'Girona': 6, 'Lreida': 4, 'Huesca': 3, 'Navarre': 5, 'La Rioja': 4, 'Álava': 4, 'Guipuzcoa': 6, 'Biscay': 8, 'Cantabria': 5, 'Ceuta': 1, 'Melilla': 1, 'Santa Cruz de Tenerife': 7, 'Las Palmas': 8, 'Balearic Islands': 8},
-
-'switzerland_national_council': {'Aargau': 16, 'Appenzell Outer Rhodes': 1, 'Appenzell Inner Rhodes': 1, 'Basel-Landschaft': 7, 'Basel-Stadt': 5, 'Bern': 24, 'Fribourg': 7, 'Geneva': 12, 'Glarus': 1, 'Graubünden': 5, 'Jura': 2, 'Lucerne': 9, 'Neuchâtel': 4, 'Nidwalden': 1, 'Obwalden': 1, 'St. Gallen': 12, 'Schaffhausen': 2, 'Schwyz': 4, 'Solothurn': 6, 'Thurgau': 6, 'Ticino': 8, 'Uri': 1, 'Vaud': 19, 'Valais': 8, 'Zurich': 35, 'Zug': 3},
-
-'switzerland_council_of_states': {'Aargau': 2, 'Appenzell Outer Rhodes': 1, 'Appenzell Inner Rhodes': 1, 'Basel-Landschaft': 1, 'Basel-Stadt': 1, 'Bern': 2, 'Fribourg': 2, 'Geneva': 2, 'Glarus': 2, 'Graubünden': 2, 'Jura': 2, 'Lucerne': 2, 'Neuchâtel': 2, 'Nidwalden': 1, 'Obwalden': 1, 'St. Gallen': 2, 'Schaffhausen': 2, 'Schwyz': 2, 'Solothurn': 2, 'Thurgau': 2, 'Ticino': 2, 'Uri': 2, 'Vaud': 2, 'Valais': 2, 'Zurich': 2, 'Zug': 2},
-
-'sweden_riksdag': {'Sweden': 39, 'Stockholms kommun': 29, 'Stockholm': 39, 'Uppsala': 11, 'Södermanland': 9, 'Östergötland': 14, 'Jönköping': 11, 'Kronoberg': 6, 'Kalmar': 8, 'Gotland': 2, 'Blekinge': 5, 'Malmö kommun': 10, 'Skåne läns västra': 9, 'Skåne läns södra': 12, 'Skåne läns norra och östra': 10, 'Värmland': 9, 'Örebro': 9, 'Västmanland': 8, 'Dalarna': 9, 'Gävleborg': 9, 'Västernorrland': 8, 'Jämtland': 4, 'Västerbotten': 9, 'Norrbotten': 8, 'Halland': 10, 'Göteborgs kommun': 17, 'Västra Götalands läns norra': 8, 'Västra Götalands läns östra': 9, 'Västra Götalands läns västra': 11, 'Västra Götalands läns södra': 7},
-
-'usa_territories_ec': {'AL': 9, 'AK': 3, 'AZ': 11, 'AR': 6, 'CA': 55, 'CO': 9, 'CT': 7, 'DE': 3, 'FL': 29, 'GA': 16, 'HI': 4, 'ID': 4, 'IL': 20, 'IN': 11, 'IA': 6, 'KS': 6, 'KY': 8, 'LA': 8, 'ME': 4, 'ME-AL': 2, 'ME-D1': 1, 'ME-D2': 1, 'MD': 10, 'MA': 11, 'MI': 16, 'MN': 10, 'MS': 6, 'MO': 10, 'MT': 3, 'NE': 5, 'NE-AL': 2, 'NE-D1': 1, 'NE-D2': 1, 'NE-D3': 1, 'NV': 6, 'NH': 4, 'NJ': 14, 'NM': 5, 'NY': 29, 'NC': 15, 'ND': 3, 'OH': 18, 'OK': 7, 'OR': 7, 'PA': 20, 'RI': 4, 'SC': 9, 'SD': 3, 'TN': 11, 'TX': 38, 'UT': 6, 'VT': 3, 'VA': 13, 'WA': 12, 'WV': 5, 'WI': 10, 'WY': 3, 'DC': 3, 'AS': 1, 'GU': 1, 'MP': 1, 'PR': 1, 'VI': 1},
-
-'usa_ec': {'AL': 9, 'AK': 3, 'AZ': 11, 'AR': 6, 'CA': 55, 'CO': 9, 'CT': 7, 'DE': 3, 'FL': 29, 'GA': 16, 'HI': 4, 'ID': 4, 'IL': 20, 'IN': 11, 'IA': 6, 'KS': 6, 'KY': 8, 'LA': 8, 'ME': 4, 'ME-AL': 2, 'ME-D1': 1, 'ME-D2': 1, 'MD': 10, 'MA': 11, 'MI': 16, 'MN': 10, 'MS': 6, 'MO': 10, 'MT': 3, 'NE': 5, 'NE-AL': 2, 'NE-D1': 1, 'NE-D2': 1, 'NE-D3': 1, 'NV': 6, 'NH': 4, 'NJ': 14, 'NM': 5, 'NY': 29, 'NC': 15, 'ND': 3, 'OH': 18, 'OK': 7, 'OR': 7, 'PA': 20, 'RI': 4, 'SC': 9, 'SD': 3, 'TN': 11, 'TX': 38, 'UT': 6, 'VT': 3, 'VA': 13, 'WA': 12, 'WV': 5, 'WI': 10, 'WY': 3, 'DC': 3},
-
-'usa_2024_ec': {'AL': 9, 'AK': 3, 'AZ': 11, 'AR': 6, 'CA': 54, 'CO': 10, 'CT': 7, 'DE': 3, 'FL': 30, 'GA': 16, 'HI': 4, 'ID': 4, 'IL': 19, 'IN': 11, 'IA': 6, 'KS': 6, 'KY': 8, 'LA': 8, 'ME': 4, 'ME-AL': 2, 'ME-D1': 1, 'ME-D2': 1, 'MD': 10, 'MA': 11, 'MI': 15, 'MN': 10, 'MS': 6, 'MO': 10, 'MT': 4, 'NE': 5, 'NE-AL': 2, 'NE-D1': 1, 'NE-D2': 1, 'NE-D3': 1, 'NV': 6, 'NH': 4, 'NJ': 14, 'NM': 5, 'NY': 28, 'NC': 16, 'ND': 3, 'OH': 17, 'OK': 7, 'OR': 8, 'PA': 19, 'RI': 4, 'SC': 9, 'SD': 3, 'TN': 11, 'TX': 40, 'UT': 6, 'VT': 3, 'VA': 13, 'WA': 12, 'WV': 4, 'WI': 10, 'WY': 3, 'DC': 3},
-
-'usa_1972_ec': {'AL': 9, 'AK': 3, 'AZ': 6, 'AR': 6, 'CA': 45, 'CO': 7, 'CT': 8, 'DE': 3, 'FL': 17, 'GA': 12, 'HI': 4, 'ID': 4, 'IL': 26, 'IN': 13, 'IA': 8, 'KS': 7, 'KY': 9, 'LA': 10, 'ME': 4, 'ME-AL': 2, 'ME-D1': 1, 'ME-D2': 1, 'MD': 10, 'MA': 14, 'MI': 21, 'MN': 10, 'MS': 7, 'MO': 12, 'MT': 4, 'NE': 5, 'NV': 3, 'NH': 4, 'NJ': 17, 'NM': 4, 'NY': 41, 'NC': 13, 'ND': 3, 'OH': 25, 'OK': 8, 'OR': 6, 'PA': 27, 'RI': 4, 'SC': 8, 'SD': 4, 'TN': 10, 'TX': 26, 'UT': 4, 'VT': 3, 'VA': 11, 'WA': 9, 'WV': 6, 'WI': 11, 'WY': 3, 'DC': 3},
-
-'usa_pre_civilwar_ec': {'AL': 9, 'AK': 0, 'AZ': 0, 'AR': 4, 'CA': 4, 'CO': 0, 'CT': 6, 'DE': 3, 'FL': 3, 'GA': 10, 'HI': 0, 'ID': 0, 'IL': 11, 'IN': 13, 'IA': 4, 'KS': 0, 'KY': 12, 'LA': 6, 'ME': 8, 'MD': 8, 'MA': 13, 'MI': 6, 'MN': 4, 'MS': 7, 'MO': 9, 'MT': 0, 'NE': 0, 'NV': 0, 'NH': 5, 'NJ': 7, 'NM': 0, 'NY': 35, 'NC': 10, 'ND': 0, 'OH': 23, 'OK': 0, 'OR': 3, 'PA': 27, 'RI': 4, 'SC': 8, 'SD': 0, 'TN': 12, 'TX': 4, 'UT': 0, 'VT': 5, 'VA': 15, 'WA': 0, 'WI': 5, 'WY': 0, 'DC': 0},
-
-'usa_no_districts_ec': {'AL': 9, 'AK': 3, 'AZ': 11, 'AR': 6, 'CA': 55, 'CO': 9, 'CT': 7, 'DE': 3, 'FL': 29, 'GA': 16, 'HI': 4, 'ID': 4, 'IL': 20, 'IN': 11, 'IA': 6, 'KS': 6, 'KY': 8, 'LA': 8, 'ME': 4,'MD': 10, 'MA': 11, 'MI': 16, 'MN': 10, 'MS': 6, 'MO': 10, 'MT': 3, 'NE': 5, 'NV': 6, 'NH': 4, 'NJ': 14, 'NM': 5, 'NY': 29, 'NC': 15, 'ND': 3, 'OH': 18, 'OK': 7, 'OR': 7, 'PA': 20, 'RI': 4, 'SC': 9, 'SD': 3, 'TN': 11, 'TX': 38, 'UT': 6, 'VT': 3, 'VA': 13, 'WA': 12, 'WV': 5, 'WI': 10, 'WY': 3, 'DC': 3},
-
-'lte_ec': {'NE': 11, 'SE': 9, 'MW': 8, 'WE': 6, 'SW': 5, 'OV': 7},
-
-'dem_primary': {'AL': 52, 'AK': 15, 'AS': 6, 'AZ': 67, 'AR': 31, 'CA': 415, 'CO': 67, 'CT': 60, 'DE': 21, 'DA': 13, 'DC': 20, 'FL': 219, 'GA': 105, 'GU': 7, 'HI': 24, 'ID': 20, 'IL': 155, 'IN': 82, 'IA': 41, 'KS': 39, 'KY': 54, 'LA': 54, 'ME': 24, 'MD': 96, 'MA': 91, 'MI': 125, 'MN': 75, 'MS': 36, 'MO': 68, 'MT': 19, 'NE': 29, 'NV': 36, 'NH': 24, 'NJ': 126, 'NM': 34, 'NY': 274, 'NC': 110, 'ND': 14, 'NI': 6, 'OH': 136, 'OK': 37, 'OR': 61, 'PA': 186, 'PR': 51, 'RI': 26, 'SC': 54, 'SD': 16, 'SU': 771, 'TN': 64, 'TX': 228, 'UT': 29, 'VT': 16, 'VI': 7, 'VA': 99, 'WA': 89, 'WV': 28, 'WI': 84, 'WY': 14},
-
-'rep_primary': {'AL': 50, 'AK': 28, 'AS': 9, 'AZ': 57, 'AR': 40, 'CA': 172, 'CO': 37, 'CT': 28, 'DE': 16, 'DC': 19, 'FL': 122, 'GA': 76, 'GU': 9, 'HI': 19, 'ID': 32, 'IL': 67, 'IN': 70, 'IA': 40, 'KS': 39, 'KY': 46, 'LA': 46, 'ME': 22, 'MD': 38, 'MA': 41, 'MI': 73, 'MN': 39, 'MS': 39, 'MO': 54, 'MT': 27, 'NE': 36, 'NV': 25, 'NH': 22, 'NJ': 49, 'NM': 22, 'NY': 95, 'NC': 71, 'ND': 29, 'NI': 9, 'OH': 82, 'OK': 43, 'OR': 28, 'PA': 88, 'PR': 23, 'RI': 19, 'SC': 50, 'SD': 29, 'TN': 58, 'TX': 155, 'UT': 40, 'VT': 17, 'VI': 9, 'VA': 49, 'WA': 44, 'WV': 34, 'WI': 52, 'WY': 29},
-
-'eu_parliament': {'IE-S':5,'IE-N':4,'IE-D':4,'BE-D':12,'BE-F':8,'BE-G':1,'FR':79,'ES':59,'PT':21,'IT':76,'MT':6,'CY':6,'GR':21,'BG':17,'RO':33,'HR':12,'HU':21,'SL':8,'AT':19,'SK':14,'CZ':21,'PO':52,'LI':11,'LV':8,'EE':7,'FI':14,'SE':21,'DK':14,'NL':29,'LU':6,'DE':96},
-
-'to_short_hand': {'Alabama': 'AL', 'Alaska': 'AK', 'Arizona': 'AZ', 'Arkansas': 'AR', 'California': 'CA', 'Colorado': 'CO', 'Connecticut': 'CT', 'Delaware': 'DE', 'Florida': 'FL', 'Georgia': 'GA', 'Hawaii': 'HI', 'Idaho': 'ID', 'Illinois': 'IL', 'Indiana': 'IN', 'Iowa': 'IA', 'Kansas': 'KS', 'Kentucky': 'KY', 'Louisiana': 'LA', 'Maine': 'ME', 'Maryland': 'MD', 'Massachusetts': 'MA', 'Michigan': 'MI', 'Minnesota': 'MN', 'Mississippi': 'MS', 'Missouri': 'MO', 'Montana': 'MT', 'Nebraska': 'NE', 'Nevada': 'NV', 'New Hampshire': 'NH', 'New Jersey': 'NJ', 'New Mexico': 'NM', 'New York': 'NY', 'North Carolina': 'NC', 'North Dakota': 'ND', 'Ohio': 'OH', 'Oklahoma': 'OK', 'Oregon': 'OR', 'Pennsylvania': 'PA', 'Rhode Island': 'RI', 'South Carolina': 'SC', 'South Dakota': 'SD', 'Tennessee': 'TN', 'Texas': 'TX', 'Utah': 'UT', 'Vermont': 'VT', 'Virginia': 'VA', 'Washington': 'WA', 'West Virginia': 'WV', 'Wisconsin': 'WI', 'Wyoming': 'WY' } 
+'to_short_hand': {'Alabama': 'AL', 'Alaska': 'AK', 'Arizona': 'AZ', 'Arkansas': 'AR', 'California': 'CA', 'Colorado': 'CO', 'Connecticut': 'CT', 'Delaware': 'DE', 'Florida': 'FL', 'Georgia': 'GA', 'Hawaii': 'HI', 'Idaho': 'ID', 'Illinois': 'IL', 'Indiana': 'IN', 'Iowa': 'IA', 'Kansas': 'KS', 'Kentucky': 'KY', 'Louisiana': 'LA', 'Maine': 'ME', 'Maryland': 'MD', 'Massachusetts': 'MA', 'Michigan': 'MI', 'Minnesota': 'MN', 'Mississippi': 'MS', 'Missouri': 'MO', 'Montana': 'MT', 'Nebraska': 'NE', 'Nevada': 'NV', 'New Hampshire': 'NH', 'New Jersey': 'NJ', 'New Mexico': 'NM', 'New York': 'NY', 'North Carolina': 'NC', 'North Dakota': 'ND', 'Ohio': 'OH', 'Oklahoma': 'OK', 'Oregon': 'OR', 'Pennsylvania': 'PA', 'Rhode Island': 'RI', 'South Carolina': 'SC', 'South Dakota': 'SD', 'Tennessee': 'TN', 'Texas': 'TX', 'Utah': 'UT', 'Vermont': 'VT', 'Virginia': 'VA', 'Washington': 'WA', 'West Virginia': 'WV', 'Wisconsin': 'WI', 'Wyoming': 'WY', 'Puerto Rico': 'PR' } 
 }
 class SimulatorData {
 }
@@ -6529,7 +6079,7 @@ function updateArticles() {
 			article.setAttribute('class', 'yapnews-article');
 			var articleTitle = document.createElement('a');
 			articleTitle.setAttribute('class', 'yapnews-article-title');
-			articleTitle.setAttribute('href', 'https://www.yapms.com/news/article.php?a=' + data[index]['id']);
+			articleTitle.setAttribute('href', 'https://www.letsdoelections.com/news/article.php?a=' + data[index]['id']);
 			articleTitle.setAttribute('target', '_blank');
 			var articleAuthor = document.createElement('div');
 			articleAuthor.setAttribute('class', 'yapnews-article-author');
@@ -6604,8 +6154,8 @@ function start() {
 	} else if(php_load_type_map === true) {
 		MapLoader.loadMapFromId(php_load_map_id);
 	} else {
-		PresetLoader.loadPreset("classic");
-		MapLoader.loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open");
+		PresetLoader.loadPreset("lde");
+		MapLoader.loadMap("./res/lde/LDE_presidential.svg", 16, 1, "lde_2012_ec", "presidential", "open");
 	}
 
 	setTimeout(function() {

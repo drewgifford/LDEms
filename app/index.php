@@ -11,11 +11,11 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	
 	<meta property="og:image:type" content="image/png">
-	<meta property="og:site_name" content="yapms.com">
+	<meta property="og:site_name" content="letsdoelections.com">
 	<meta property="og:type" content="article">
 
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="yapms.com">
+	<meta name="twitter:title" content="letsdoelections.com">
 	<meta name="twitter:description" content="Interactive Political Maps">
 
 	<meta name="theme-color" content="#ffffff"/>
@@ -43,28 +43,28 @@
 		$userid = "-1";
 		$userMap = "false";
 		$loadMapID = 0;
-		$linkURL = "https://www.yapms.com/app/";
-		$secureImageURL = "https://www.yapms.com/app/res/yapms/yapms-96.png";
-		$imageURL = "http://www.yapms.com/app/res/yapms/yapms-96.png";
+		$linkURL = "https://www.letsdoelections.com/app/";
+		$secureImageURL = "https://www.letsdoelections.com/app/res/yapms/yapms-96.png";
+		$imageURL = "http://www.letsdoelections.com/app/res/yapms/yapms-96.png";
 		if(isset($_GET["m"])) {
 			$loadMap = "true";
 			$loadMapID = $_GET["m"];
 			$imageURL = "http://yapms.org/maps/{$loadMapID}.png";
 			$secureImageURL = "https://yapms.org/maps/{$loadMapID}.png";
-			$linkURL = "https://www.yapms.com/app/?m={$loadMapID}";
+			$linkURL = "https://www.letsdoelections.com/app/?m={$loadMapID}";
 			if(isset($_GET["u"])) {
 				$userMap = "true";
 				$userid = $_GET["u"];
 				$imageURL = "http://yapms.org/users/{$userid}/{$loadMapID}.png";
 				$secureImageURL = "https://yapms.org/users/{$userid}/{$loadMapID}.png";
-				$linkURL = "https://www.yapms.com/app/?u={$userid}&m={$loadMapID}";
+				$linkURL = "https://www.letsdoelections.com/app/?u={$userid}&m={$loadMapID}";
 			}
 		} else if(isset($_GET["t"])) {
 			$loadTypeMap = "true";
 			$loadMapID = $_GET["t"];
-			$imageURL = "http://www.yapms.com/app/res/yapms/yapms-96.png";
-			$secureImageURL = "https://www.yapms.com/app/res/yapms/yapms-96.png";
-			$linkURL = "https://www.yapms.com/app/?t={$loadMapID}";
+			$imageURL = "http://www.letsdoelections.com/app/res/yapms/yapms-96.png";
+			$secureImageURL = "https://www.letsdoelections.com/app/res/yapms/yapms-96.png";
+			$linkURL = "https://www.letsdoelections.com/app/?t={$loadMapID}";
 		}
 
 		echo "<script>
@@ -85,15 +85,14 @@
 ?>
 
 	<!-- Ads -->
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<script>
 		//(adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 1;
 		(adsbygoogle = window.adsbygoogle || []).push({
 		google_ad_client: "ca-pub-1660456925957249",
 		enable_page_level_ads: true});
 	</script>
-
-	<!-- Analytics -->
+		-->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132710089-1"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
@@ -110,7 +109,7 @@
 	<script defer src="https://cdn.jsdelivr.net/npm/panzoom@9.4.2/dist/panzoom.min.js"></script>
 	<script defer src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2/dist/chart.min.js"></script>
 	<script defer src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0-rc.1/dist/chartjs-plugin-datalabels.min.js"></script>
-	<script defer src="./bin/yapms.min.js"></script>
+	<script defer src="./bin/yapms.js"></script>
 </head>
 <body id="body" onresize="onResize()">
 <div id="yapms">
@@ -136,7 +135,7 @@
 				Powered By
 			</div>
 			<div id="yapms-watermark-graphic">
-				yapms.com
+				letsdoelections.com
 			</div>
 		</div>
 	</div>
@@ -175,18 +174,7 @@ require './html/menu/customcoloreditor.php';
 require './html/menu/addcandidatemenu.php';
 
 require './html/menu/mapmenu.php';
-require './html/menu/mapmenu-usa.php';
-require './html/menu/mapmenu-usa-state.php';
-require './html/menu/mapmenu-usa-historical.php'; 
-require './html/menu/mapmenu-russia.php';
-require './html/menu/mapmenu-netherlands.php';
-require './html/menu/mapmenu-germany.php';
-require './html/menu/mapmenu-canada.php';
-require './html/menu/mapmenu-brazil.php';
-require './html/menu/mapmenu-australia.php';
-require './html/menu/mapmenu-uk.php';
-require './html/menu/mapmenu-switzerland.php';
-require './html/menu/mapmenu-india.php';
+require './html/menu/mapmenu-lde-house.php';
 
 require './html/menu/stylemenu.php';
 require './html/menu/sharemenu.php';

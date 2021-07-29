@@ -9,16 +9,16 @@
 	<meta property="og:title" content="YAPms - Yet Another Political Map Simulator">
 	<meta property="og:description" content="Interactive Political Maps">
 	<meta property="og:image:type" content="image/jpeg">
-	<meta property="og:site_name" content="yapms.com">
+	<meta property="og:site_name" content="letsdoelections.com">
 
-	<meta property="og:image" content="http://www.yapms.com/app/res/yapms/yapms-96.png">
-	<meta property="og:image:secure_url" content="https://www.yapms.com/app/res/yapms/yapms-96.png">
+	<meta property="og:image" content="http://www.letsdoelections.com/app/res/yapms/yapms-96.png">
+	<meta property="og:image:secure_url" content="https://www.letsdoelections.com/app/res/yapms/yapms-96.png">
 
 	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="yapms.com">
+	<meta name="twitter:title" content="letsdoelections.com">
 	<meta name="twitter:description" content="Interactive Political Maps">
 
-	<meta property="twitter:image" content="https://www.yapms.com/app/res/yapms/yapms-96.png">
+	<meta property="twitter:image" content="https://www.letsdoelections.com/app/res/yapms/yapms-96.png">
 	
 	<meta name="theme-color" content="#ffffff"/>
 	<link rel="icon" href="./app/res/yapms/yapms-16.png" sizes="16x16" type="image/png"/>
@@ -27,7 +27,7 @@
 	<link rel="apple-touch-icon" href="./app/res/yapms/yapms-180.png" sizes="180x180" type="image/png"/>
 	<link rel="manifest" href="./manifest.json">
 
-	<title>YAPms - Yet Another Political Map Simulator</title>
+	<title>LDEms - Let's Do Elections Map Simulator</title>
 
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132710089-1"></script>
 	<script>
