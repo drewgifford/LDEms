@@ -22,8 +22,6 @@
 
     $done = false;
 
-    $file_put_contents("/maps/test.txt", $_GET);
-
     while ($done == false) {
         $id = substr(str_shuffle($str_allowed), 0, 7);
 
