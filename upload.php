@@ -38,7 +38,7 @@
     fwrite($file, json_encode($_GET));
     fclose($file);
 
-    echo 'letsdoelections.com/app?m=' . $id . " " . $id . '.txt';
+    echo 'letsdoelections.com/app?m=' . $id . " " . $id . '.txt' . $_POST['states'];
     
 
 
