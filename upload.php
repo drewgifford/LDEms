@@ -25,12 +25,12 @@
     while ($done == false) {
         $id = substr(str_shuffle($str_allowed), 0, 7);
 
-        if (file_exists($root .. '/maps/' .. $id .. '.txt')) {
+        if (file_exists($root . '/maps/' . $id . '.txt')) {
             $done = true;
         }
     }
 
-    $file = fopen($root .. '/maps/' .. $id .. '.txt', "w");
+    $file = fopen($root . '/maps/' . $id . '.txt', "w");
 
     fwrite($file, $_GET);
     fclose($file);
