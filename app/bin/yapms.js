@@ -2286,7 +2286,7 @@ class PresetLoader {
 			['#bf1d29', '#ff5865', '#ff8b98', '#cf8980']);
 		var labor = new Candidate('Labor',
 			['#27a7a4', '#57DBD9', '#97F7F6', '#A5C5C5']);
-		var ppa = new Candidate('People\'s',
+		var ppa = new Candidate('Patriot',
 			['#ff6c00', '#FF9D57', '#FDC49B', '#C4A287']);
 		var libdem = new Candidate('LibDem',
 			['#ffd800', '#FDE977', '#F3E9AF', '#D0C58B']);
@@ -2301,7 +2301,7 @@ class PresetLoader {
 
 		CandidateManager.candidates['Republican'] = republican;
 		CandidateManager.candidates['Labor'] = labor;
-		CandidateManager.candidates['People\'s'] = ppa;
+		CandidateManager.candidates['Patriot'] = ppa;
 		CandidateManager.candidates['LibDem'] = libdem;
 		CandidateManager.candidates['AKIP'] = akip;
 		CandidateManager.candidates['Independent'] = ind;
