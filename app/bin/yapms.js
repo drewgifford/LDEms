@@ -5677,6 +5677,7 @@ class SaveMap {
 		})
 		.then(response => response.text())
 		.then(data => {
+			alert(data);
 			var data = data.split(' ');
 			var url = data[0];
 			var filename = data[1];

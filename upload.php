@@ -38,11 +38,7 @@
     fwrite($file, json_encode($_GET));
     fclose($file);
 
-    $output = [];
-    $output[0] = 'letsdoelections.com/app?m=' . $id;
-    $output[1] = $id . '.txt';
-
-    echo $output;
+    echo 'letsdoelections.com/app?m=' . $id . " " . $id . '.txt';
     
 
 
