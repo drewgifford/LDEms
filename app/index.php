@@ -52,13 +52,6 @@
 			$imageURL = "http://yapms.org/maps/{$loadMapID}.png";
 			$secureImageURL = "https://yapms.org/maps/{$loadMapID}.png";
 			$linkURL = "https://www.letsdoelections.com/app/?m={$loadMapID}";
-			if(isset($_GET["u"])) {
-				$userMap = "true";
-				$userid = $_GET["u"];
-				$imageURL = "http://yapms.org/users/{$userid}/{$loadMapID}.png";
-				$secureImageURL = "https://yapms.org/users/{$userid}/{$loadMapID}.png";
-				$linkURL = "https://www.letsdoelections.com/app/?u={$userid}&m={$loadMapID}";
-			}
 		} else if(isset($_GET["t"])) {
 			$loadTypeMap = "true";
 			$loadMapID = $_GET["t"];

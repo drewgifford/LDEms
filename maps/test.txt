@@ -1,0 +1,17 @@
+{
+    obj['filename']obj['fontsize'], obj['strokewidth'], obj['dataid'],
+				obj['type'], obj['year']
+
+    "filename": "test",
+    "fontsize": "test",
+    "strokewidth": "test",
+    "dataid": "test",
+    "type": "test",
+    "year": "test",
+    "candidates": {},
+    "states": {}
+
+
+
+
+}
