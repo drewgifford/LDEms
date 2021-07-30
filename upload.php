@@ -8,23 +8,8 @@
 
     $root = dirname(__FILE__); 
 
-    $servername = "127.0.0.1";
-    $username = "letsysml_app";
-    $password ="W.6xx@D95kd6Pws";
-    $database = "letsysml_lde";
-
-
-    $conn = new mysqli($servername, $username, $password, $database);
-
-    if ($conn->connect_error){
-        die("Connection failed");
-    }
 
     $data = $_POST;
-
-    echo implode('|', $_POST[1]);
-
-    return;
 
     $str_allowed = 'abcdefghijklmnopqrstuvwxyz';
 
@@ -48,10 +33,10 @@
     $file = fopen($root . '/maps/' . $id . '.txt', "w");
 
 
-    fwrite($file, json_encode($_POST[1]));
+    fwrite($file, json_encode(json_decode($_POST['data']), true));
     fclose($file);
 
-    echo 'letsdoelections.com/app?m=' . $id . " " . $id . '.txt' . $_POST[1]['states'];
+    echo 'letsdoelections.com/app?m=' . $id . " " . $id . '.txt';
     
 
 

@@ -5677,7 +5677,6 @@ class SaveMap {
 		})
 		.then(response => response.text())
 		.then(data => {
-			alert(data);
 			var data = data.split(' ');
 			var url = data[0];
 			var filename = data[1];
@@ -6143,7 +6142,7 @@ function start() {
 		if(php_load_user === true) {
 			url = 'https://yapms.org/users/' + php_load_user_id + '/' + php_load_map_id + '.txt'; 	
 		} else {
-			url = 'https://yapms.org/maps/' + php_load_map_id + '.txt'; 	
+			url = '../maps/' + php_load_map_id + '.txt'; 	
 		}
 		MapLoader.loadMapFromURL(url);
 
