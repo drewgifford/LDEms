@@ -25,11 +25,18 @@
     $str_allowed = 'abcdefghijklmnopqrstuvwxyz';
 
     $done = false;
+    $counter = 0;
 
     while ($done == false) {
         $id = substr(str_shuffle($str_allowed), 0, 7);
 
         if (!file_exists($root . '/maps/' . $id . '.txt')) {
+            break;
+        }
+        $counter = $counter + 1;
+
+        if ($counter > 10) {
+            die("Error - Caught in loop");
             break;
         }
     }
