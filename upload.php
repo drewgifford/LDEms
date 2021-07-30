@@ -22,7 +22,6 @@
 
     $data = $_POST;
 
-    echo implode("|",$_POST);
     return;
 
     $str_allowed = 'abcdefghijklmnopqrstuvwxyz';
@@ -47,10 +46,10 @@
     $file = fopen($root . '/maps/' . $id . '.txt', "w");
 
 
-    fwrite($file, json_encode($_POST));
+    fwrite($file, json_encode($_POST[1]));
     fclose($file);
 
-    echo 'letsdoelections.com/app?m=' . $id . " " . $id . '.txt' . $_POST['states'];
+    echo 'letsdoelections.com/app?m=' . $id . " " . $id . '.txt' . $_POST[1]['states'];
     
 
 
