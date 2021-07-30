@@ -6122,7 +6122,7 @@ function updateMobile() {
 }
 
 function start() {
-	Account.verifyState();
+	//Account.verifyState();
 
 	CookieManager.loadCookies();
 	CookieManager.askConsent();

@@ -22,7 +22,7 @@
 
     $data = $_POST;
 
-    echo $_POST;
+    echo implode("|",$_POST);
     return;
 
     $str_allowed = 'abcdefghijklmnopqrstuvwxyz';
