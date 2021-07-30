@@ -1,13 +1,7 @@
 <div id="sidebar">
 	<div id="sidebar-social">
-	<a id="sidebar-discord-link" class="social-link" href="https://discord.gg/kT9dMHY" target="_blank"><div id="sidebar-discord" class="sidebar-button">
+	<a id="sidebar-discord-link" class="social-link" href="https://discord.gg/lde" target="_blank"><div id="sidebar-discord" class="sidebar-button">
 		Discord
-	</div></a>
-	<a id="sidebar-reddit-link" class="social-link" href="https://www.reddit.com/r/YAPms/" target="_blank"><div id="sidebar-reddit" class="sidebar-button">
-		Reddit
-	</div></a>
-	<a id="sidebar-twitter-link" class="social-link" href="https://twitter.com/YAPmsOfficial" target="_blank"><div id="sidebar-twitter" class="sidebar-button">
-		Twitter
 	</div></a>
 	</div>
 	<div id="sidebar-header">
@@ -136,60 +130,6 @@
 		<div id="sidebar-congress-party">
 		</div>
 	</div>
-<?php
-	$url = "";
-	$title = "";
-
-	switch($_GET["t"]) {
-		case "USA_2020_cook":
-		$url = "https://cookpolitical.com";
-		$title = "cookpolitical.com";
-		break;
-		case "USA_2020_house_cook":
-		$url = "https://cookpolitical.com/index.php/ratings/house-race-ratings";
-		$title = "cookpolitical.com";
-		break;
-		case "USA_2020_sabatos":
-		$url = "http://crystalball.centerforpolitics.org/crystalball/2020-president/";
-		$title = "centerforpolitics.org";
-		break;
-		case "USA_2020_inside":
-		$url = "https://insideelections.com/ratings/president";
-		$title = "insideelections.com";
-		break;
-	}
-	
-	if($url !== "" && $title !== "") {
-		echo "<div id='sidebar-source'>
-			<div class='sidebar-box'>
-				<h3>
-					Source
-				</h3>
-				<a href='{$url}' target='_blank'>{$title}</a>
-			</div>
-		</div>";
-	}
-
-	if(strpos($_GET["t"], '_presidential') &&
-		!strpos($_GET["t"], '_county')) {
-		include './html/info/usa_info_electoral_college.php';
-	} else {
-		switch($_GET["t"]) {
-		case "USA_2022_senate":
-		case "USA_2020_senate":
-		case "USA_current_senate":
-		case "USA_senate":
-			include './html/info/usa_info_senate.php';
-			break;
-		case "USA_2024_projection":
-		case "USA_2020_cook":
-		case "USA_2020_inside":
-		case "USA_2020_sabatos":
-			include './html/info/usa_info_electoral_college.php';
-			break;
-		}
-	}
-?>	
 <div id="yapnews-articles">
 </div>
 </div>

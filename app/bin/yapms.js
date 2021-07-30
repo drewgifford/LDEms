@@ -5692,7 +5692,7 @@ class SaveMap {
 				
 			} else {
 				shareurl.setAttribute('href', url);
-				shareurl.innerHTML = url;
+				shareurl.innerHTML = "http://" + url;
 			}
 			
 			shareurl.style.display = '';

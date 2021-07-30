@@ -36,6 +36,17 @@
     fwrite($file, json_encode(json_decode($_POST['data']), true));
     fclose($file);
 
+    $img_data = $_POST['img'];
+    //$img_data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $img_data));
+
+    $img_data = str_replace('data:image/png;base64,', '', $img_data);
+    $img_data = str_replace(' ', '+', $img_data);
+    $img_data_export = base64_decode($img_data);
+    
+    $img_file = fopen($root . '/maps/' . $id . '.png', "w");
+    fwrite($img_file, $img_data_export);
+    fclose($img_file);
+
     echo 'letsdoelections.com/app?m=' . $id . " " . $id . '.txt';
     
 

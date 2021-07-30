@@ -49,8 +49,8 @@
 		if(isset($_GET["m"])) {
 			$loadMap = "true";
 			$loadMapID = $_GET["m"];
-			$imageURL = "http://yapms.org/maps/{$loadMapID}.png";
-			$secureImageURL = "https://yapms.org/maps/{$loadMapID}.png";
+			$imageURL = "http://letsdoelections.com/maps/{$loadMapID}.png";
+			$secureImageURL = "https://letsdoelections.com/maps/{$loadMapID}.png";
 			$linkURL = "https://www.letsdoelections.com/app/?m={$loadMapID}";
 		} else if(isset($_GET["t"])) {
 			$loadTypeMap = "true";
