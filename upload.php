@@ -22,6 +22,9 @@
 
     $data = $_POST;
 
+    echo $_POST;
+    return;
+
     $str_allowed = 'abcdefghijklmnopqrstuvwxyz';
 
     $done = false;
