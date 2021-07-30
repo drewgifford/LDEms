@@ -25,9 +25,13 @@
 <a class="selectmenu-split">
 	<div class="selectmenu-split-text">Senate</div>
 </a>
+<a class="selectmenu-button" href="./?t=LDE_senate_2012">
+	<i class="fas fa-star"></i>
+	<div class="selectmenu-button-text">2012</div>
+</a>
 <a class="selectmenu-button" href="./?t=LDE_senate">
 	<i class="fas fa-star"></i>
-	<div class="selectmenu-button-text">LDE Senate</div>
+	<div class="selectmenu-button-text">Blank Map</div>
 </a>
 </div>
 </div>

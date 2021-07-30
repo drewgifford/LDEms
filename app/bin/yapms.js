@@ -1682,9 +1682,14 @@ class MapLoader {
 				PresetLoader.loadPreset("lde");
 				MapLoader.loadMap("./res/lde/LDE_presidential.svg", 16, 0.75, "lde_2012_ec", "presidential", "open");
 				break;
+			case "LDE_senate_blank":
 			case "LDE_senate":
 				PresetLoader.loadPreset("lde");
 				MapLoader.loadMap("./res/lde/LDE_senate.svg", 16, 0.75, "1", "takeall_noedit", "open");
+				break;
+			case "LDE_senate_2012":
+				PresetLoader.loadPreset("lde");
+				MapLoader.loadMap("./res/lde/LDE_senate.svg", 16, 0.75, "1", "senatorial", "2012");
 				break;
 			default:
 				PresetLoader.loadPreset("lde");
@@ -1830,7 +1835,7 @@ class MapLoader {
 			}
 
 			if(type === 'senatorial' && year !== 'open') {
-				MapLoader.loadSenateFile(dataname, finishOptions);
+				MapLoader.loadGubernatorialFile(dataname, finishOptions); // changed from loadSenatorialFile
 			} else if(type === 'gubernatorial' && year !== 'open') {
 				MapLoader.loadGubernatorialFile(dataname, finishOptions);
 			} else {
