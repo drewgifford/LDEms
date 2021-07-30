@@ -8,17 +8,20 @@
 	<div class="navigation-2">
 		<div class="navigation-3">
 			<a class="navigation-4" href="./app/?t=LDE_presidential">
-				President (2012-2016)
+				2012-2020 President
 			</a>
 		</div>
 		<div class="navigation-3">
 			<a class="navigation-4" href="./app/?t=LDE_house_2012">
-				House (2012-2022)
+				2012-2022 House
 			</a>
 		</div>
 		<div class="navigation-3">
+			<a class="navigation-4" href="./app/?t=LDE_senate_2012">
+				2012 Senate
+			</a>
 			<a class="navigation-4" href="./app/?t=LDE_senate">
-				Senate (2012-2022)
+				Senate (Blank)
 			</a>
 		</div>
 	</div>

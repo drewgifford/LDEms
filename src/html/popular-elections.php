@@ -14,13 +14,13 @@
 		</div>
 		<div class="link-list">
 		<a class="link" href="./app/?t=LDE_presidential">
-			Presidential
+			2012 Presidential
 		</a>
-		<a class="link" href="./app/?t=LDE_senate">
-			Senate
+		<a class="link" href="./app/?t=LDE_senate_2012">
+			2012 Senate
 		</a>
 		<a class="link" href="./app/?t=LDE_house_2012">
-			House
+			2012 House
 		</a>
 		</div>
 	</div>

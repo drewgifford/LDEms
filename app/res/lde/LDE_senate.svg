@@ -41,6 +41,17 @@
             letter-spacing: -0.07em;
          }
       </style>
+      <style>
+         * {
+            -webkit-user-select: none; /* Safari */        
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* IE10+/Edge */
+            user-select: none; /* Standard */
+         }
+         text, text * {
+            pointer-events: none;
+         }
+      </style>
    </defs>
    <g id="outlines">
       <path id="AK" class="cls-1"
