@@ -78,14 +78,14 @@
 ?>
 
 	<!-- Ads -->
-	<!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<script>
 		//(adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 1;
 		(adsbygoogle = window.adsbygoogle || []).push({
 		google_ad_client: "ca-pub-1660456925957249",
 		enable_page_level_ads: true});
 	</script>
-		-->
+		
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132710089-1"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
