@@ -1,0 +1,317 @@
+* {
+  font-family:"Roboto Condensed"
+}
+label {
+  font-style: italic;
+}
+.result-region, .result-type {
+  white-space: nowrap;
+}
+.special-electoral-inner {
+  display: grid;
+  grid-auto-columns: auto;
+  grid-gap: 10px;
+}
+
+.hidden {
+    display: none;
+  }
+  .resultBox {
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid black;
+  }
+  /*.result {
+      padding: 10px;
+      margin: 5px 0px;
+    }
+    .result p {
+      background: rgba(0,0,0,0.5);
+      display: inline;
+      padding: 5px;
+      color: white;
+    }*/
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital@1&display=swap');
+
+    .result-background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background: #DBD9D9;
+      z-index: -1;
+    }
+    .result-background-inner {
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      z-index: -2;
+    }
+
+    .result * {
+      font-family: "Roboto Condensed";
+      font-weight: bold;
+    }
+    .result p {
+      margin: 0;
+      text-transform: uppercase;
+      /*text-shadow: 3px 3px 5px rgba(0,0,0,0.75);*/
+      color: white;
+    }
+    .result p.yellow {
+      color: #EAAE23;
+    }
+    .result p.wide {
+      letter-spacing: 0.1em;
+    }
+    p.result-region {
+      font-size: 56px;
+      margin-top: 0px;
+      margin-bottom: 6px;
+      overflow-x: hidden;
+      max-width: 490px;
+    }
+    .result .inside {
+      max-width: 650px;
+      margin: auto;
+    }
+    .result {
+      margin: 0px;
+      width: 800px;
+      position: relative;
+      padding-bottom: 25px;
+    }
+    .result-header {
+      background: #666666;
+      padding: 10px 0px 15px 0px;
+      font-size: 36px;
+      margin-bottom: 10px;
+      border-bottom: 4px solid black;
+      margin-bottom: 25px;
+    }
+    .result-type {
+      width: 50%;
+      display: inline-block;
+    }
+    .reporting {
+      display: flex;
+      border: 4px solid black;
+    }
+    p.result-percentage {
+      text-align: right;
+      padding-right: 10px;
+      display: inline-block;
+      font-size: 28px;
+      text-shadow: none;
+      color: black;
+      width: 75px;
+    }
+    .reporting-progress {
+      background: #666666;
+      width: 100%;
+      display: flex;
+    }
+    .reporting-progress > * {
+      flex-basis: 10%;
+      
+      border-left: 1.5px solid #DBD9D9;
+      border-right: 1.5px solid #DBD9D9;
+    }
+    img:not(.colorpick-eyedropper-input-trigger) {
+      width: 800px;
+    }
+    .c-row {
+      display: flex;
+      font-size: 36px;
+      margin: 10px 0px;
+      background: #D9DADA;
+      border-radius: 20px;
+      border: 4px solid black;
+    }
+    /*.c-row > div:nth-of-type(2) {
+      padding: 0px 20px;
+    }*/
+    .c-row .c-candidate {
+      flex-grow: 1;
+    }
+    .c-candidate {
+      padding: 0px;
+    }
+    .c-percentage {
+      min-width: 200px;
+      position: relative;
+    }
+    .result-percentage {
+
+    }
+    .reporting {
+      background: #DBD9D9;
+      width: 300px;
+      margin-left: auto;
+      margin-top: 30px;
+      padding: 10px 20px;
+      border-radius: 20px;
+  }
+    .c-percentage p {
+      transform: translate(-50%, -50%);
+      color: black;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      text-shadow: none;
+      text-align: center;
+      font-size: 56px;
+    
+    }
+    .c-party {
+      margin-left: -8px;
+    }
+    .result-header .divider {
+      display: flex;
+    }
+    .result-header .divider .half {
+      flex-basis: 50%;
+    }
+    .half.special {
+      text-align: right;
+    }
+
+    .semi-hidden {
+      filter: opacity(0) !important;
+    }
+
+    .special-electoral {
+      display: inline-block;
+      text-align: right;
+      
+    }
+    .special-electoral-label {
+      position: relative;
+      min-width: 100px;
+      grid-area: 1 / 1;
+    }
+    .special-electoral-label-inner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 20px;
+    }
+    p.result-electoral {
+      font-size: 56px;
+      max-height: 72px;
+      padding-top: 3px;
+      height: 72px;
+      padding: 0px 10px;
+      text-align: center;
+      background: #DBD9DA;
+      grid-area: 1 / 2;
+      border-radius: 20px;
+      text-shadow: none;
+      color: black;
+    }
+
+    .c-party-inside {
+      
+      
+      width: 1.5em;
+      height:100%;
+      margin-top: -4px;
+
+      border-top: 4px solid black;
+      border-left: 4px solid black;
+      border-bottom: 4px solid black;
+      
+      background: rgba(169, 18, 18, 1);
+      /*box-shadow: 5px 5px 5px rgb(0,0,0);*/
+      position: relative;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      
+      
+    }
+    .result p.c-votes {
+      text-align: right;
+      padding-right: 8px;
+      text-shadow: none;
+      color: black;
+    }
+    .c-name {
+      background: black;
+      border-bottom-right-radius: 20px;
+      padding: 8px;
+      border-bottom: 4px solid rgba(32, 170, 143, 1);
+      border-right: 4px solid rgba(32, 170, 143, 1);
+    }
+    .c-party-r .c-name {
+      border-color: rgba(169, 18, 18, 1);
+    }
+    .c-party-d .c-name {
+      border-color: rgba(13, 17, 130, 1);
+    }
+    .c-party-l .c-name {
+      border-color: rgba(32, 170, 143, 1);
+    }
+    .c-party-q .c-name {
+      border-color: rgba(192, 164, 21, 1);
+    }
+    .c-party-i .c-name {
+      border-color: rgba(99, 99, 99, 1);
+    }
+    .c-party-i .c-party-inside {
+      background: rgba(99, 99, 99, 1);
+    }
+    .c-party-i .c-party-inside::after {
+      content: "I";
+    }
+
+    .c-row {
+      position: relative;
+    }
+    .c-row *:not(.c-row-background) {
+      z-index: 99999;
+    }
+    .c-row-background {
+      position: absolute;
+      top: 0;
+      left: calc(1.5em - 4px);
+      width: calc(100% - 1.5em + 4px);
+      border-radius: 0px 16px 16px 0px;
+      height: 100%;
+      display: block;
+      z-index: 0;
+    }
+
+
+    .c-party-r .c-party-inside{
+      background: rgba(169, 18, 18, 1);
+    }
+    .c-party-d .c-party-inside {
+      background: rgba(13, 17, 130, 1);
+    }
+    .c-party-l .c-party-inside {
+      background: rgba(32, 170, 143, 1);
+    }
+    .c-party-q .c-party-inside {
+      background: rgba(192, 164, 21, 1);
+    }
+
+
+    
+    .c-party-inside-id {
+      text-align: center;
+      color: white;
+      font-size: 36px;
+      text-transform: uppercase;
+      
+      display: block;
+      position: absolute;
+      top: 28.5%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
