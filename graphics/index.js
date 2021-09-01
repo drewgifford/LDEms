@@ -70,6 +70,8 @@ $("#modelResultButton").click(function(){
       console.log("LINE", val)
       var line = value[val];
 
+      if(line.trim() == "Model Result") { continue; }
+
       console.log("LINE BITCH", line)
 
       var user_match, pct_match, party_match;
