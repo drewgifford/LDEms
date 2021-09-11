@@ -1691,6 +1691,10 @@ class MapLoader {
 				PresetLoader.loadPreset("lde");
 				MapLoader.loadMap("./res/lde/LDE_senate.svg", 16, 0.75, "1", "senatorial", "2012");
 				break;
+			case "FIJI_presidential_2010":
+				PresetLoader.loadPreset("fiji");
+				MapLoader.loadMap("./res/lde/Fiji_presidential_2010.svg", 16, 0.75, "fiji_2010_ec", "presidential", "open");
+				break;
 			default:
 				PresetLoader.loadPreset("lde");
 				MapLoader.loadMap("./res/lde/LDE_2012_house.svg", 16, 0.75, "1", "takeall_noedit", "open");
@@ -2206,6 +2210,9 @@ class PresetLoader {
 			case 'lde':
 				PresetLoader.loadPresetLDE();
 				break;
+			case 'fiji':
+				PresetLoader.loadPresetFiji();
+				break;
 			case 'classic':
 				PresetLoader.loadPresetClassic();
 				break;
@@ -2310,6 +2317,32 @@ class PresetLoader {
 		CandidateManager.candidates['LibDem'] = libdem;
 		CandidateManager.candidates['AKIP'] = akip;
 		CandidateManager.candidates['Independent'] = ind;
+	}
+
+	static loadPresetFiji() {
+		var fijiFirst = new Candidate('FijiFirst', 
+			['#f00034', '#ff5865', '#ff8b98', '#cf8980']);
+		var sodelpa = new Candidate('SODELPA',
+			['#1c408c', '#577ccc', '#8aafff', '#949bb3']);
+		var nfa = new Candidate('National Federation',
+			['#1c8c28', '#50c85e', '#8aff97', '#7a997e']);
+		var fa = new Candidate('Freedom Alliance',
+			['#e6b700', '#e8c84d', '#ffe78a', '#b8a252']);
+		var ufp = new Candidate('Unity Fiji',
+			['#27a7a4', '#57DBD9', '#97F7F6', '#A5C5C5']);
+		var labour = new Candidate('Labour',
+			['#80302e', '#cb4b40', '#fb817f', '#f5c8c4']);
+		/*var ppa;
+		var libdem;
+		var akip;
+		var ind;*/
+
+		CandidateManager.candidates['FijiFirst'] = fijiFirst;
+		CandidateManager.candidates['SODELPA'] = sodelpa;
+		CandidateManager.candidates['National Federation'] = nfa;
+		CandidateManager.candidates['Freedom Alliance'] = fa;
+		CandidateManager.candidates['Unity Fiji'] = ufp;
+		CandidateManager.candidates['Labour'] = labour;
 	}
 
 
@@ -4287,6 +4320,8 @@ function db_getCongress(onLoad) {
 }
 var GlobalData = {
 'lde_2012_ec': {'AL': 7, 'AK': 4, 'AZ': 11, 'AR': 5, 'CA': 57, 'CO': 10, 'CT': 5, 'DE': 3, 'FL': 29, 'GA': 16, 'HI': 4, 'ID': 5, 'IL': 20, 'IN': 11, 'IA': 6, 'KS': 6, 'KY': 8, 'LA': 7, 'ME': 3, 'MD': 9, 'MA': 10, 'MI': 16, 'MN': 10, 'MS': 4, 'MO': 10, 'MT': 3, 'NE': 5, 'NV': 7, 'NH': 3, 'NJ': 14, 'NM': 7, 'NY': 28, 'NC': 15, 'ND': 3, 'OH': 22, 'OK': 6, 'OR': 7, 'PA': 20, 'RI': 3, 'SC': 8, 'SD': 3, 'TN': 9, 'TX': 39, 'UT': 5, 'VT': 3, 'VA': 15, 'WA': 12, 'WV': 7, 'WI': 12, 'WY': 3, 'DC': 3, 'PR': 7},
+
+'fiji_2010_ec': {'BA': 33, 'NT': 23, 'RW': 16, 'MA': 10, 'TA': 10, 'NN': 9, 'CK': 9, 'RA': 6, 'LO': 4, 'BU': 4, 'SA': 3, 'KU': 3, 'LU': 3, 'NI': 3},
 
 'to_short_hand': {'Alabama': 'AL', 'Alaska': 'AK', 'Arizona': 'AZ', 'Arkansas': 'AR', 'California': 'CA', 'Colorado': 'CO', 'Connecticut': 'CT', 'Delaware': 'DE', 'Florida': 'FL', 'Georgia': 'GA', 'Hawaii': 'HI', 'Idaho': 'ID', 'Illinois': 'IL', 'Indiana': 'IN', 'Iowa': 'IA', 'Kansas': 'KS', 'Kentucky': 'KY', 'Louisiana': 'LA', 'Maine': 'ME', 'Maryland': 'MD', 'Massachusetts': 'MA', 'Michigan': 'MI', 'Minnesota': 'MN', 'Mississippi': 'MS', 'Missouri': 'MO', 'Montana': 'MT', 'Nebraska': 'NE', 'Nevada': 'NV', 'New Hampshire': 'NH', 'New Jersey': 'NJ', 'New Mexico': 'NM', 'New York': 'NY', 'North Carolina': 'NC', 'North Dakota': 'ND', 'Ohio': 'OH', 'Oklahoma': 'OK', 'Oregon': 'OR', 'Pennsylvania': 'PA', 'Rhode Island': 'RI', 'South Carolina': 'SC', 'South Dakota': 'SD', 'Tennessee': 'TN', 'Texas': 'TX', 'Utah': 'UT', 'Vermont': 'VT', 'Virginia': 'VA', 'Washington': 'WA', 'West Virginia': 'WV', 'Wisconsin': 'WI', 'Wyoming': 'WY', 'Puerto Rico': 'PR' } 
 }
