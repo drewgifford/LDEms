@@ -1678,23 +1678,46 @@ class MapLoader {
 				PresetLoader.loadPreset("lde");
 				MapLoader.loadMap("./res/lde/LDE_2012_house.svg", 16, 0.75, "1", "takeall_noedit", "open");
 				break;
+
 			case "LDE_presidential":
 				PresetLoader.loadPreset("lde");
 				MapLoader.loadMap("./res/lde/LDE_presidential.svg", 16, 0.75, "lde_2012_ec", "presidential", "open");
 				break;
+
 			case "LDE_senate_blank":
 			case "LDE_senate":
 				PresetLoader.loadPreset("lde");
 				MapLoader.loadMap("./res/lde/LDE_senate.svg", 16, 0.75, "1", "takeall_noedit", "open");
 				break;
+				
 			case "LDE_senate_2012":
 				PresetLoader.loadPreset("lde");
 				MapLoader.loadMap("./res/lde/LDE_senate.svg", 16, 0.75, "1", "senatorial", "2012");
 				break;
+
+			case "FIJI_presidential":
 			case "FIJI_presidential_2010":
+			case "FIJI_presidential_2000":
 				PresetLoader.loadPreset("fiji");
-				MapLoader.loadMap("./res/lde/Fiji_presidential_2010.svg", 16, 0.75, "fiji_2010_ec", "presidential", "open");
+				MapLoader.loadMap("./res/lde/Fiji_presidential_2000.svg", 16, 0.75, "fiji_2000_ec", "presidential", "open");
 				break;
+
+			case "FIJI_presidential_leanings":
+				PresetLoader.loadPreset("liberalConservative");
+				MapLoader.loadMap("./res/lde/Fiji_presidential_2000.svg", 16, 0.75, "fiji_2000_ec", "presidential", "open");
+				break;
+
+			case "FIJI_house":
+			case "FIJI_house_2000":
+				PresetLoader.loadPreset("fiji");
+				MapLoader.loadMap("./res/lde/FIJI_house_2000.svg", 16, 0.75, "1", "takeall_noedit", "open");
+				break;
+
+			case "FIJI_house_leanings":
+				PresetLoader.loadPreset("liberalConservative");
+				MapLoader.loadMap("./res/lde/FIJI_house_2000.svg", 16, 0.75, "1", "takeall_noedit", "open");
+				break;
+
 			default:
 				PresetLoader.loadPreset("lde");
 				MapLoader.loadMap("./res/lde/LDE_2012_house.svg", 16, 0.75, "1", "takeall_noedit", "open");
@@ -2207,6 +2230,9 @@ class PresetLoader {
 		switch(value) {
 			case 'none':
 				break;
+			case 'liberalConservative':
+				PresetLoader.loadPresetLiberalConservative();
+				break;
 			case 'lde':
 				PresetLoader.loadPresetLDE();
 				break;
@@ -2317,6 +2343,16 @@ class PresetLoader {
 		CandidateManager.candidates['LibDem'] = libdem;
 		CandidateManager.candidates['AKIP'] = akip;
 		CandidateManager.candidates['Independent'] = ind;
+	}
+
+	static loadPresetLiberalConservative(){
+		var liberal = new Candidate('Liberal', 
+			['#741B47', '#A64D79', '#C27BA0', '#D5A6BD']);
+		var conservative = new Candidate('Conservative',
+			['#1C4587', '#1155CC', '#3C78D8', '#A4C2F4']);
+
+		CandidateManager.candidates['Liberal'] = liberal;
+		CandidateManager.candidates['Conservative'] = conservative;
 	}
 
 	static loadPresetFiji() {
@@ -4321,7 +4357,7 @@ function db_getCongress(onLoad) {
 var GlobalData = {
 'lde_2012_ec': {'AL': 7, 'AK': 4, 'AZ': 11, 'AR': 5, 'CA': 57, 'CO': 10, 'CT': 5, 'DE': 3, 'FL': 29, 'GA': 16, 'HI': 4, 'ID': 5, 'IL': 20, 'IN': 11, 'IA': 6, 'KS': 6, 'KY': 8, 'LA': 7, 'ME': 3, 'MD': 9, 'MA': 10, 'MI': 16, 'MN': 10, 'MS': 4, 'MO': 10, 'MT': 3, 'NE': 5, 'NV': 7, 'NH': 3, 'NJ': 14, 'NM': 7, 'NY': 28, 'NC': 15, 'ND': 3, 'OH': 22, 'OK': 6, 'OR': 7, 'PA': 20, 'RI': 3, 'SC': 8, 'SD': 3, 'TN': 9, 'TX': 39, 'UT': 5, 'VT': 3, 'VA': 15, 'WA': 12, 'WV': 7, 'WI': 12, 'WY': 3, 'DC': 3, 'PR': 7},
 
-'fiji_2010_ec': {'BA': 33, 'NT': 23, 'RW': 16, 'MA': 10, 'TA': 10, 'NN': 9, 'CK': 9, 'RA': 6, 'LO': 4, 'BU': 4, 'SA': 3, 'KU': 3, 'LU': 3, 'NI': 3},
+'fiji_2000_ec': {'BA': 33, 'NT': 23, 'RW': 16, 'MA': 10, 'TA': 10, 'NN': 9, 'CK': 9, 'RA': 6, 'LO': 4, 'BU': 4, 'SA': 3, 'KU': 3, 'LU': 3, 'NI': 3},
 
 'to_short_hand': {'Alabama': 'AL', 'Alaska': 'AK', 'Arizona': 'AZ', 'Arkansas': 'AR', 'California': 'CA', 'Colorado': 'CO', 'Connecticut': 'CT', 'Delaware': 'DE', 'Florida': 'FL', 'Georgia': 'GA', 'Hawaii': 'HI', 'Idaho': 'ID', 'Illinois': 'IL', 'Indiana': 'IN', 'Iowa': 'IA', 'Kansas': 'KS', 'Kentucky': 'KY', 'Louisiana': 'LA', 'Maine': 'ME', 'Maryland': 'MD', 'Massachusetts': 'MA', 'Michigan': 'MI', 'Minnesota': 'MN', 'Mississippi': 'MS', 'Missouri': 'MO', 'Montana': 'MT', 'Nebraska': 'NE', 'Nevada': 'NV', 'New Hampshire': 'NH', 'New Jersey': 'NJ', 'New Mexico': 'NM', 'New York': 'NY', 'North Carolina': 'NC', 'North Dakota': 'ND', 'Ohio': 'OH', 'Oklahoma': 'OK', 'Oregon': 'OR', 'Pennsylvania': 'PA', 'Rhode Island': 'RI', 'South Carolina': 'SC', 'South Dakota': 'SD', 'Tennessee': 'TN', 'Texas': 'TX', 'Utah': 'UT', 'Vermont': 'VT', 'Virginia': 'VA', 'Washington': 'WA', 'West Virginia': 'WV', 'Wisconsin': 'WI', 'Wyoming': 'WY', 'Puerto Rico': 'PR' } 
 }
