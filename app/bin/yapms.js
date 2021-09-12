@@ -1708,6 +1708,7 @@ class MapLoader {
 				break;
 
 			case "FIJI_house":
+			case "FIJI_house_2010":
 			case "FIJI_house_2000":
 				PresetLoader.loadPreset("fiji");
 				MapLoader.loadMap("./res/lde/FIJI_house_2000.svg", 16, 0.75, "1", "takeall_noedit", "open");
