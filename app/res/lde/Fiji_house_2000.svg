@@ -5,6 +5,7 @@
       .cls-1, .cls-2 {
         stroke-width: 0.5px;
       }
+      
       * {
          -webkit-user-select: none; /* Safari */        
          -moz-user-select: none; /* Firefox */
