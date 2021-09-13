@@ -1711,12 +1711,12 @@ class MapLoader {
 			case "FIJI_house_2010":
 			case "FIJI_house_2000":
 				PresetLoader.loadPreset("fiji");
-				MapLoader.loadMap("./res/lde/FIJI_house_2000.svg", 16, 0.75, "1", "takeall_noedit", "open");
+				MapLoader.loadMap("./res/lde/Fiji_house_2000.svg", 16, 0.75, "1", "takeall_noedit", "open");
 				break;
 
 			case "FIJI_house_leanings":
 				PresetLoader.loadPreset("liberalConservative");
-				MapLoader.loadMap("./res/lde/FIJI_house_2000.svg", 16, 0.75, "1", "takeall_noedit", "open");
+				MapLoader.loadMap("./res/lde/Fiji_house_2000.svg", 16, 0.75, "1", "takeall_noedit", "open");
 				break;
 
 			default:
