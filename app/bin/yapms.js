@@ -1715,10 +1715,23 @@ class MapLoader {
 				break;
 
 			case "FIJI_house_leanings":
+			case "FIJI_house_2000_leanings":
 				PresetLoader.loadPreset("liberalConservative");
 				MapLoader.loadMap("./res/lde/Fiji_house_2000.svg", 16, 0.75, "1", "takeall_noedit", "open");
 				break;
 
+			case "FIJI_senate":
+			case "FIJI_senate_2000":
+				PresetLoader.loadPreset("fiji");
+				MapLoader.loadMap("./res/lde/Fiji_senate_2000.svg", 16, 0.75, "1", "takeall_noedit", "open");
+				break;
+
+			case "FIJI_senate_leanings":
+			case "FIJI_senate_2000_leanings":
+				PresetLoader.loadPreset("liberalConservative");
+				MapLoader.loadMap("./res/lde/Fiji_senate_2000.svg", 16, 0.75, "1", "takeall_noedit", "open");
+				break;
+			
 			default:
 				PresetLoader.loadPreset("lde");
 				MapLoader.loadMap("./res/lde/LDE_2012_house.svg", 16, 0.75, "1", "takeall_noedit", "open");

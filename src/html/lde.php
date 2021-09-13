@@ -39,6 +39,9 @@
 			<a class="navigation-4" href="./app/?t=FIJI_presidential_2000">
 				2000-2010 President
 			</a>
+			<a class="navigation-4" href="./app/?t=FIJI_senate_2000">
+				2000-2010 Senate
+			</a>
 			<a class="navigation-4" href="./app/?t=FIJI_house_2000">
 				2000-2010 House
 			</a>
