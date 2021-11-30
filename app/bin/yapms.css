@@ -17,6 +17,22 @@
 	overflow: hidden;
 }
 
+#sidebar {
+	display: none !important;
+}
+
+#outlines path, #outlines rect {
+	transform: translate(-9px,-6px), translateZ(0);
+	filter: brightness(1);
+
+}
+
+#outlines path:hover, #outlines rect:hover {
+
+	filter: brightness(1.2);
+
+}
+
 #mysaves-header {
 	display: flex;
 	flex-direction: row;
@@ -768,11 +784,11 @@ a {
 }
 
 #outlines path {
-	transition: all 100ms linear;
+	transition: all 75ms ease-out;
 }
 
 #outlines rect {
-	transition: all 100ms linear;
+	transition: all 100ms ease-out;
 }
 
 #text {

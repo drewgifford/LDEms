@@ -1660,7 +1660,7 @@ class MapLoader {
 			MapLoader.loadSavedMap(data);
 		}).catch(error => {
 			console.log("Map Loader: Did not find saved map");
-			MapLoader.loadMap('./res/lde/LDE_presidential.svg', 16, 1, 'lde_2012_ec',"presidential", "open");
+			MapLoader.loadMap('./res/lde/LDE_presidential.svg', 16, 1, 'lde_2024_ec',"presidential", "open");
 
 			var notification = document.getElementById('notification');
 			var message = notification.querySelector('#notification-message');
@@ -1679,7 +1679,19 @@ class MapLoader {
 				MapLoader.loadMap("./res/lde/LDE_2012_house.svg", 16, 0.75, "1", "takeall_noedit", "open");
 				break;
 
+			case "LDE_house":
+			case "LDE_2022_house":
+				PresetLoader.loadPreset("lde");
+				MapLoader.loadMap("./res/lde/LDE_2022_house.svg", 16, 0.75, "1", "takeall_noedit", "open");
+				break;
+
 			case "LDE_presidential":
+			case "LDE_presidential_2024":
+				PresetLoader.loadPreset("lde");
+				MapLoader.loadMap("./res/lde/LDE_presidential.svg", 16, 0.75, "lde_2024_ec", "presidential", "open");
+				break;
+			
+			case "LDE_presidential_2012":
 				PresetLoader.loadPreset("lde");
 				MapLoader.loadMap("./res/lde/LDE_presidential.svg", 16, 0.75, "lde_2012_ec", "presidential", "open");
 				break;
@@ -1689,10 +1701,20 @@ class MapLoader {
 				PresetLoader.loadPreset("lde");
 				MapLoader.loadMap("./res/lde/LDE_senate.svg", 16, 0.75, "1", "takeall_noedit", "open");
 				break;
+
+			case "LDE_senate_2022":
+				PresetLoader.loadPreset("lde");
+				MapLoader.loadMap("./res/lde/LDE_senate.svg", 16, 0.75, "1", "senatorial", "2022");
+				break;
 				
 			case "LDE_senate_2012":
 				PresetLoader.loadPreset("lde");
 				MapLoader.loadMap("./res/lde/LDE_senate.svg", 16, 0.75, "1", "senatorial", "2012");
+				break;
+
+			case "LDE_states":
+				PresetLoader.loadPreset("lde");
+				MapLoader.loadMap("./res/lde/LDE_senate.svg", 16, 0.75, "1", "takeall_noedit", "open");
 				break;
 
 			case "FIJI_presidential":
@@ -1734,7 +1756,7 @@ class MapLoader {
 			
 			default:
 				PresetLoader.loadPreset("lde");
-				MapLoader.loadMap("./res/lde/LDE_2012_house.svg", 16, 0.75, "1", "takeall_noedit", "open");
+				MapLoader.loadMap("./res/lde/LDE_2022_house.svg", 16, 0.75, "1", "takeall_noedit", "open");
 				break;
 		}
 	}
@@ -1809,7 +1831,7 @@ class MapLoader {
 
 		/* TURNING OFF LABELS BREAKS THE LEANS ON THE GRAPH */
 		strokeMultiplier = strokewidth;
-		strokeMultiplier = 0.5;
+		strokeMultiplier = 0.25;
 		var dataname = './data/' + type + '_' + year;
 
 		console.log('Loading ' + filename);
@@ -1883,6 +1905,8 @@ class MapLoader {
 				mapHTML.style.visibility = 'visible';
 				finishOptions();
 			}
+
+			onResize();
 		});
 	}
 
@@ -2334,16 +2358,16 @@ class PresetLoader {
 	// republicans vs democrats
 
 	static loadPresetLDE() {
-		var republican = new Candidate('Republican', 
-			['#bf1d29', '#ff5865', '#ff8b98', '#cf8980']);
 		var labor = new Candidate('Labor',
-			['#27a7a4', '#57DBD9', '#97F7F6', '#A5C5C5']);
-		var ppa = new Candidate('Patriot',
-			['#ff6c00', '#FF9D57', '#FDC49B', '#C4A287']);
-		var libdem = new Candidate('LibDem',
-			['#ffd800', '#FDE977', '#F3E9AF', '#D0C58B']);
-		var akip = new Candidate('AKIP',
-			['#1d1aa8', '#5250F7', '#AAA8FF', '#8D8DAA']);
+			['#D80A5B', '#F73E88', '#FA8FBA', '#B18FA2']);
+		var conservative = new Candidate('Republican', 
+			['#0070F9', '#508EF8', '#89B4FA', '#ACB5C4']);
+		var whig = new Candidate('Whig',
+			['#6313BB', '#9647ED', '#C79CF5', '#A896B4']);
+		var solidarity = new Candidate('Solidarity',
+			['#571515', '#9C3030', '#C26666', '#BC9494']);
+		var communist = new Candidate('Communist',
+			['#FF0005', '#FF5865', '#FF8B98', '#CF8980']);
 		var ind = new Candidate('Independent',
 			['#595959', '#949494', '#CFCFCF', '#F2F2F2']);
 		/*var ppa;
@@ -2351,11 +2375,11 @@ class PresetLoader {
 		var akip;
 		var ind;*/
 
-		CandidateManager.candidates['Republican'] = republican;
 		CandidateManager.candidates['Labor'] = labor;
-		CandidateManager.candidates['Patriot'] = ppa;
-		CandidateManager.candidates['LibDem'] = libdem;
-		CandidateManager.candidates['AKIP'] = akip;
+		CandidateManager.candidates['Conservative'] = conservative;
+		CandidateManager.candidates['Whig'] = whig;
+		CandidateManager.candidates['Solidarity'] = solidarity;
+		CandidateManager.candidates['Communist'] = communist;
 		CandidateManager.candidates['Independent'] = ind;
 	}
 
@@ -3315,7 +3339,7 @@ class State {
 		// update the html text display
 		const stateText = document.getElementById(this.name + '-text');
 		if(stateText !== null && 
-			(MapLoader.save_dataid === "lde_2012_ec")) {
+			(MapLoader.save_dataid === "lde_2024_ec")) {
 			const text = this.name + ' ' + value;
 			// the text elements in an svg are inside spans
 			if(typeof stateText.childNodes[1] !== 'undefined') {
@@ -4370,6 +4394,8 @@ function db_getCongress(onLoad) {
 }
 var GlobalData = {
 'lde_2012_ec': {'AL': 7, 'AK': 4, 'AZ': 11, 'AR': 5, 'CA': 57, 'CO': 10, 'CT': 5, 'DE': 3, 'FL': 29, 'GA': 16, 'HI': 4, 'ID': 5, 'IL': 20, 'IN': 11, 'IA': 6, 'KS': 6, 'KY': 8, 'LA': 7, 'ME': 3, 'MD': 9, 'MA': 10, 'MI': 16, 'MN': 10, 'MS': 4, 'MO': 10, 'MT': 3, 'NE': 5, 'NV': 7, 'NH': 3, 'NJ': 14, 'NM': 7, 'NY': 28, 'NC': 15, 'ND': 3, 'OH': 22, 'OK': 6, 'OR': 7, 'PA': 20, 'RI': 3, 'SC': 8, 'SD': 3, 'TN': 9, 'TX': 39, 'UT': 5, 'VT': 3, 'VA': 15, 'WA': 12, 'WV': 7, 'WI': 12, 'WY': 3, 'DC': 3, 'PR': 7},
+
+'lde_2024_ec': {'AL': 7, 'AK': 3, 'AZ': 13, 'AR': 6, 'CA': 56, 'CO': 12, 'CT': 5, 'DE': 3, 'FL': 31, 'GA': 16, 'HI': 4, 'ID': 4, 'IL': 19, 'IN': 10, 'IA': 5, 'KS': 5, 'KY': 7, 'LA': 7, 'ME': 3, 'MD': 8, 'MA': 9, 'MI': 15, 'MN': 10, 'MS': 5, 'MO': 9, 'MT': 7, 'NE': 8, 'NV': 8, 'NH': 3, 'NJ': 12, 'NM': 8, 'NY': 25, 'NC': 14, 'ND': 4, 'OH': 20, 'OK': 6, 'OR': 9, 'PA': 18, 'RI': 3, 'SC': 7, 'SD': 5, 'TN': 7, 'TX': 41, 'UT': 6, 'VT': 3, 'VA': 13, 'WA': 13, 'WV': 4, 'WI': 10, 'WY': 3, 'DC': 3, 'PR': 8},
 
 'fiji_2000_ec': {'BA': 33, 'NT': 23, 'RW': 16, 'MA': 10, 'TA': 10, 'NN': 9, 'CK': 9, 'RA': 6, 'LO': 4, 'BU': 4, 'SA': 3, 'KU': 3, 'LU': 3, 'NI': 3},
 
@@ -6245,7 +6271,7 @@ function start() {
 		MapLoader.loadMapFromId(php_load_map_id);
 	} else {
 		PresetLoader.loadPreset("lde");
-		MapLoader.loadMap("./res/lde/LDE_presidential.svg", 16, 1, "lde_2012_ec", "presidential", "open");
+		MapLoader.loadMap("./res/lde/LDE_presidential.svg", 16, 1, "lde_2024_ec", "presidential", "open");
 	}
 
 	setTimeout(function() {
@@ -6274,3 +6300,115 @@ if('serviceWorker' in navigator) {
 } else {
 	console.log('No service worker detected');
 }
+
+// HOVER EFFECTS
+
+function LightenDarkenColor(colorCode, amount){
+    var usePound = false;
+ 
+    if (colorCode[0] == "#") {
+        colorCode = colorCode.slice(1);
+        usePound = true;
+    }
+ 
+    var num = parseInt(colorCode, 16);
+ 
+    var r = (num >> 16) + amount;
+ 
+    if (r > 255) {
+        r = 255;
+    } else if (r < 0) {
+        r = 0;
+    }
+ 
+    var b = ((num >> 8) & 0x00FF) + amount;
+ 
+    if (b > 255) {
+        b = 255;
+    } else if (b < 0) {
+        b = 0;
+    }
+ 
+    var g = (num & 0x0000FF) + amount;
+ 
+    if (g > 255) {
+        g = 255;
+    } else if (g < 0) {
+        g = 0;
+    }
+ 
+    return (usePound ? "#" : "") + (g | (b << 8) | (r << 16)).toString(16);
+}
+
+function componentFromStr(numStr, percent) {
+    var num = Math.max(0, parseInt(numStr, 10));
+    return percent ?
+        Math.floor(255 * Math.min(100, num) / 100) : Math.min(255, num);
+}
+
+function rgbToHex(rgb) {
+
+	if (!(rgb.includes(","))) return rgb;
+
+    var rgbRegex = /^rgb\(\s*(-?\d+)(%?)\s*,\s*(-?\d+)(%?)\s*,\s*(-?\d+)(%?)\s*\)$/;
+    var result, r, g, b, hex = "";
+    if ( (result = rgbRegex.exec(rgb)) ) {
+        r = componentFromStr(result[1], result[2]);
+        g = componentFromStr(result[3], result[4]);
+        b = componentFromStr(result[5], result[6]);
+
+        hex = "0x" + (0x1000000 + (r << 16) + (g << 8) + b).toString(16).slice(1);
+    }
+    return hex;
+}
+
+
+activeIds = {};
+$(document).on('mouseover', '#svgdata path, #svgdata rect', function(){
+
+	console.log("HI")
+
+	var elem = $(this);
+
+	var id = elem.attr("id");
+
+	/*if (!(id in activeIds)){
+		
+
+
+		var fill = elem.css("fill");
+
+		activeIds[id] = fill;
+
+		fill = rgbToHex(fill);
+		
+		var newFill = LightenDarkenColor(fill, -30);
+
+		console.log("NEW FILL", newFill)
+
+		elem.css("fill","#"+newFill);
+
+	}*/
+
+
+
+
+});
+
+$(document).on('mouseleave', '#svgdata path, #svgdata rect', function(){
+	var elem = $(this);
+	var id = elem.attr("id");
+
+	/*if (id in activeIds){
+		fill = activeIds[id];
+		
+		elem.css("fill",fill);
+
+		delete activeIds[id]
+
+	}*/
+
+	
+
+
+})

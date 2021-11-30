@@ -1,53 +1,56 @@
-d Democrat #1c408c #577ccc #8aafff #949bb3
-r Republican #bf1d29 #ff5865 #ff8b98 #cf8980
+c Conservative #0070F9 #508EF8 #89B4FA #ACB5C4
+l Labor #D80A5B #F73E88 #FA8FBA #B18FA2
+s Solidarity #571515 #9C3030 #C26666 #BC9494
+i Independent #595959 #949494 #CFCFCF #F2F2F2
 !
-AL o r
-AK o r
-AZ o d
-AR o r
-CA o d
-CO o d
-CT o d
-DE d d
-FL o r
-GA o d
-HI o d
-ID o r
-IL o d
-IN o r
-IA o r
-KS o r
-KY o r
-LA o r
-ME r d
-MD o d
-MA d d
-MI d d
-MN d d
-MS r r
-MO o r
-MT r d
-NE r r
-NV o d
-NH o d
-NJ d d
-NM d d
-NY o d
-NC o r
-ND o r
-OH o d
-OK o r
-OR o d
-PA o d
-RI d d
-SC o r
-SD o r
-TN r r
-TX r r
-UT o r
-VT o d
-VA d d
-WA o d
-WV r d
-WI o d
-WY r r
+AL c
+AK o
+AZ c
+AR o
+CA o
+CO l
+CT l
+DE o
+FL i
+GA c
+HI l
+ID c
+IL o
+IN c
+IA c
+KS c
+KY c
+LA c
+ME c
+MD s
+MA l
+MI l
+MN l
+MS o
+MO c
+MT o
+NE c
+NV o
+NH o
+NJ l
+NM i
+NY l
+NC c
+ND o
+OH i
+OK o
+OR l
+PA i
+PR o
+RI o
+SC c
+SD o
+TN o
+TX c
+UT o
+VT o
+VA l
+WA s
+WV o
+WI l
+WY c
