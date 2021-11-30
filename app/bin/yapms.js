@@ -1685,6 +1685,11 @@ class MapLoader {
 				MapLoader.loadMap("./res/lde/LDE_2022_house.svg", 16, 0.75, "1", "takeall_noedit", "open");
 				break;
 
+			case "LDE_house_leans":
+				PresetLoader.loadPreset("liberalConservative");
+				MapLoader.loadMap("./res/lde/LDE_2022_house.svg", 16, 0.75, "1", "takeall_noedit", "open");
+				break;
+
 			case "LDE_presidential":
 			case "LDE_presidential_2024":
 				PresetLoader.loadPreset("lde");
@@ -2360,7 +2365,7 @@ class PresetLoader {
 	static loadPresetLDE() {
 		var labor = new Candidate('Labor',
 			['#D80A5B', '#F73E88', '#FA8FBA', '#B18FA2']);
-		var conservative = new Candidate('Republican', 
+		var conservative = new Candidate('Conservative', 
 			['#0070F9', '#508EF8', '#89B4FA', '#ACB5C4']);
 		var whig = new Candidate('Whig',
 			['#6313BB', '#9647ED', '#C79CF5', '#A896B4']);
