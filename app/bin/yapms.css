@@ -21,18 +21,6 @@
 	display: none !important;
 }
 
-#outlines path, #outlines rect {
-	transform: translate(-9px,-6px), translateZ(0);
-	filter: brightness(1);
-
-}
-
-#outlines path:hover, #outlines rect:hover {
-
-	filter: brightness(1.2);
-
-}
-
 #mysaves-header {
 	display: flex;
 	flex-direction: row;
