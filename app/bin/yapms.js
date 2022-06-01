@@ -1674,6 +1674,11 @@ class MapLoader {
 	// Load map based off of php t parameter
 	static loadMapFromId(id) {
 		switch(id) {
+			case "LDE_alt_presidential":
+				PresetLoader.loadPreset("lde_alt");
+				MapLoader.loadMap("./res/lde/LDE_presidential-alt.svg", 16, 0.75, "lde_alt_1970_ec", "presidential", "open");
+				break;
+				
 			case "LDE_2012_house":
 				PresetLoader.loadPreset("lde");
 				MapLoader.loadMap("./res/lde/LDE_2012_house.svg", 16, 0.75, "1", "takeall_noedit", "open");
@@ -2353,6 +2358,9 @@ class PresetLoader {
 			case 'eu':
 				PresetLoader.loadPresetEU();
 				break;
+			case 'lde_alt':
+				PresetLoader.loadPresetAltLDE();
+				break;
 		}
 	
 		ChartManager.updateChart();
@@ -2361,7 +2369,28 @@ class PresetLoader {
 	}
 
 	// republicans vs democrats
-
+	
+	static loadPresetAltLDE() {
+		var democrat = new Candidate('Democrat (DEM)', 
+			['#1c408c', '#577ccc', '#8aafff', '#949bb3']);
+		var republican = new Candidate('Republican (GOP)', 
+			['#f00034', '#ff5865', '#ff8b98', '#cf8980']);
+		var pcf = new Candidate('French Citizens (PCF)',
+			['#e6b700', '#e8c84d', '#ffe78a', '#b8a252']);
+		var awl = new Candidate('American Workers (AWL)',
+			['#AA4400', '#FF6600', '#FF9955', '#FFCCAA']);
+		var ind = new Candidate('Independent (IND)',
+			['#595959', '#949494', '#CFCFCF', '#F2F2F2']);
+		
+		CandidateManager.candidates['Democrat (DEM)'] = democrat;
+		CandidateManager.candidates['Republican (GOP)'] = republican;
+		CandidateManager.candidates['French Citizens (PCF)'] = pcf;
+		CandidateManager.candidates['American Workers (AWL)'] = awl;
+		CandidateManager.candidates['Independent (IND)'] = ind;
+		
+		
+	}
+	
 	static loadPresetLDE() {
 		var labor = new Candidate('Labor',
 			['#D80A5B', '#F73E88', '#FA8FBA', '#B18FA2']);
@@ -4405,6 +4434,10 @@ var GlobalData = {
 'fiji_2000_ec': {'BA': 33, 'NT': 23, 'RW': 16, 'MA': 10, 'TA': 10, 'NN': 9, 'CK': 9, 'RA': 6, 'LO': 4, 'BU': 4, 'SA': 3, 'KU': 3, 'LU': 3, 'NI': 3},
 
 'to_short_hand': {'Alabama': 'AL', 'Alaska': 'AK', 'Arizona': 'AZ', 'Arkansas': 'AR', 'California': 'CA', 'Colorado': 'CO', 'Connecticut': 'CT', 'Delaware': 'DE', 'Florida': 'FL', 'Georgia': 'GA', 'Hawaii': 'HI', 'Idaho': 'ID', 'Illinois': 'IL', 'Indiana': 'IN', 'Iowa': 'IA', 'Kansas': 'KS', 'Kentucky': 'KY', 'Louisiana': 'LA', 'Maine': 'ME', 'Maryland': 'MD', 'Massachusetts': 'MA', 'Michigan': 'MI', 'Minnesota': 'MN', 'Mississippi': 'MS', 'Missouri': 'MO', 'Montana': 'MT', 'Nebraska': 'NE', 'Nevada': 'NV', 'New Hampshire': 'NH', 'New Jersey': 'NJ', 'New Mexico': 'NM', 'New York': 'NY', 'North Carolina': 'NC', 'North Dakota': 'ND', 'Ohio': 'OH', 'Oklahoma': 'OK', 'Oregon': 'OR', 'Pennsylvania': 'PA', 'Rhode Island': 'RI', 'South Carolina': 'SC', 'South Dakota': 'SD', 'Tennessee': 'TN', 'Texas': 'TX', 'Utah': 'UT', 'Vermont': 'VT', 'Virginia': 'VA', 'Washington': 'WA', 'West Virginia': 'WV', 'Wisconsin': 'WI', 'Wyoming': 'WY', 'Puerto Rico': 'PR' } 
+
+'lde_alt_1970_ec': {'AL': 9, 'AK': 3, 'AZ': 7, 'AR': 5, 'CA': 51, 'CO': 6, 'CT': 10, 'DA': 3, 'DE': 4, 'FL': 17, 'GA': 12, 'HI': 3, 'IL': 28, 'IN': 13, 'IA': 7, 'KS': 6, 'KY': 8, 'LA': 9, 'MD': 11, 'MA': 15, 'MI': 23, 'MN': 10, 'MS': 6, 'MO': 12, 'MT': 3, 'NE': 4, 'NH': 4, 'NJ': 18, 'NM': 3, 'NY': 47, 'NC': 13, 'OH': 27, 'OK': 7, 'OR': 7, 'PA': 30, 'SC': 7, 'TN': 10, 'TX': 29, 'VT': 3, 'VA': 16, 'WA': 9, 'WI': 11, 'WY': 3, 'DC': 3, 'AB': 5, 'AS': 5, 'CB': 11, 'NB': 3, 'NF': 3, 'NS': 5, 'ON': 38, 'QC': 31, 'SP': 3, 'BC': 3, 'CH': 6, 'NL': 16, 'SO': 3},
+
+
 }
 class SimulatorData {
 }
