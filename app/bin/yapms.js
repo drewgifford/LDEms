@@ -1676,7 +1676,7 @@ class MapLoader {
 		switch(id) {
 			case "LDE_alt_presidential":
 				PresetLoader.loadPreset("lde_alt");
-				MapLoader.loadMap("./res/lde/LDE_presidential-alt.svg", 16, 0.75, "lde_alt_1970_ec", "presidential", "open");
+				MapLoader.loadMap("./res/lde/LDE_presidential_alt.svg", 16, 0.75, "lde_alt_1970_ec", "presidential", "open");
 				break;
 				
 			case "LDE_2012_house":
