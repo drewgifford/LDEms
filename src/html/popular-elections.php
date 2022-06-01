@@ -9,38 +9,12 @@
 			<div class="info-box-header">
 				<img src="app/res/flags/usa.svg">
 				<h3>
-					United States
+					Let's Do Elections (NEW!)
 				</h3>
 			</div>
 			<div class="link-list">
-			<a class="link" href="./app/?t=LDE_presidential">
-				2024 Presidential
-			</a>
-			<a class="link" href="./app/?t=LDE_senate_2022">
-				2022 Senate
-			</a>
-			<a class="link" href="./app/?t=LDE_house_2024">
-				2024-2032 House
-			</a>
-			</div>
-		</div>
-
-		<div class="info-box popular-1">
-			<div class="info-box-header">
-				<img src="app/res/flags/fiji.svg">
-				<h3>
-					Fiji
-				</h3>
-			</div>
-			<div class="link-list">
-			<a class="link" href="./app/?t=FIJI_presidential_2000">
-				2000-2010 Presidential
-			</a>
-			<a class="link" href="./app/?t=FIJI_senate_2000">
-				2000-2010 Senate
-			</a>
-			<a class="link" href="./app/?t=FIJI_house_2000">
-				2000-2010 House
+			<a class="link" href="./app/?t=LDE_alt_presidential">
+				1972-1980 Presidential
 			</a>
 			</div>
 		</div>

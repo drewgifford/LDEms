@@ -11,27 +11,9 @@
 <a class="selectmenu-split">
 	<div class="selectmenu-split-text">President</div>
 </a>
-<a class="selectmenu-button" href="./?t=LDE_presidential">
+<a class="selectmenu-button" href="./?t=LDE_alt_presidential">
 	<i class="fas fa-star"></i>
-	<div class="selectmenu-button-text">2012-2020</div>
-</a>
-<a class="selectmenu-split">
-	<div class="selectmenu-split-text">House</div>
-</a>
-<a class="selectmenu-button" href="./?t=LDE_2012_house">
-	<i class="fas fa-star"></i>
-	<div class="selectmenu-button-text">2012-2022</div>
-</a>
-<a class="selectmenu-split">
-	<div class="selectmenu-split-text">Senate</div>
-</a>
-<a class="selectmenu-button" href="./?t=LDE_senate_2012">
-	<i class="fas fa-star"></i>
-	<div class="selectmenu-button-text">2012</div>
-</a>
-<a class="selectmenu-button" href="./?t=LDE_senate">
-	<i class="fas fa-star"></i>
-	<div class="selectmenu-button-text">Blank Map</div>
+	<div class="selectmenu-button-text">1972-1980</div>
 </a>
 </div>
 </div>

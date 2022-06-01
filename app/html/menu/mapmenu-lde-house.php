@@ -6,7 +6,7 @@
 </div>
 <div class="selectmenu-display-header">
 	<img class="flag-usa">
-	<h2 class="selectmenu-display-header-text">Let's Do Elections</h2>
+	<h2 class="selectmenu-display-header-text">Let's Do Elections (Legacy)</h2>
 </div>
 </div>
 <div class="selectmenu-content">

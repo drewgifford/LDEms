@@ -2,7 +2,24 @@
 	<div class="header">
 		<img src="app/res/flags/usa.svg">
 		<h3>
-			Let's Do Elections
+			Let's Do Elections (NEW!)
+		</h3>
+	</div>
+	<div class="navigation-2">
+		<p style="margin: 5px 0;">President</p>
+		<div class="navigation-3">
+			<a class="navigation-4" href="./app/?t=LDE_alt_presidential">
+				1972-1980 President
+			</a>
+		</div>
+	</div>
+</div>
+
+<div class="navigation-1">
+	<div class="header">
+		<img src="app/res/flags/usa.svg">
+		<h3>
+			Let's Do Elections (Legacy)
 		</h3>
 	</div>
 	<div class="navigation-2">
