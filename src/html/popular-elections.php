@@ -16,6 +16,9 @@
 			<a class="link" href="./app/?t=LDE_alt_presidential">
 				1972-1980 Presidential
 			</a>
+			<a class="link" href="./app/?t=LDE_alt_states">
+				Senate / States (Blank)
+			</a>
 			</div>
 		</div>
 	</div>

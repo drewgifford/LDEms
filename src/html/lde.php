@@ -6,10 +6,22 @@
 		</h3>
 	</div>
 	<div class="navigation-2">
-		<p style="margin: 5px 0;">President</p>
+		<p style="margin: 5px 0;">Current Maps</p>
 		<div class="navigation-3">
 			<a class="navigation-4" href="./app/?t=LDE_alt_presidential">
 				1972-1980 President
+			</a>
+			<a class="navigation-4" href="./app/?t=LDE_alt_states">
+				Senate / States (Blank)
+			</a>
+		</div>
+		<p style="margin: 5px 0;">Blank Leans</p>
+		<div class="navigation-3">
+			<a class="navigation-4" href="./app/?t=LDE_alt_presidential_leans">
+				Presidential
+			</a>
+			<a class="navigation-4" href="./app/?t=LDE_alt_states_leans">
+				Senate / States
 			</a>
 		</div>
 	</div>

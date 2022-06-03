@@ -1678,6 +1678,19 @@ class MapLoader {
 				PresetLoader.loadPreset("lde_alt");
 				MapLoader.loadMap("./res/lde/LDE-presidential-alt.svg", 16, 0.75, "lde_alt_1970_ec", "presidential", "open");
 				break;
+			case "LDE_alt_states":
+				PresetLoader.loadPreset("lde_alt");
+				MapLoader.loadMap("./res/lde/LDE-states-alt.svg", 16, 0.75, "1", "takeall_noedit", "open");
+				break;
+				
+			case "LDE_alt_presidential_leans":
+				PresetLoader.loadPreset("liberalConservative");
+				MapLoader.loadMap("./res/lde/LDE-presidential-alt.svg", 16, 0.75, "lde_alt_1970_ec", "presidential", "open");
+				break;
+			case "LDE_alt_states_leans":
+				PresetLoader.loadPreset("liberalConservative");
+				MapLoader.loadMap("./res/lde/LDE-states-alt.svg", 16, 0.75, "1", "takeall_noedit", "open");
+				break;
 				
 			case "LDE_2012_house":
 				PresetLoader.loadPreset("lde");
