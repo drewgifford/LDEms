@@ -36,7 +36,7 @@
 	0% {
 		stroke-width: 0.25px;
 		stroke: rgba(255, 255, 255, 0.5);
-		fill: rgba(105, 105, 105, 0.5);
+		fill: rgba(105, 105, 105, 1);
 	}
 	50% {
 		stroke-width: 1px;
@@ -46,7 +46,7 @@
 	100% {
 		stroke-width: 0.25px;
 		stroke: rgba(255, 255, 255, 0.5);
-		fill: rgba(105, 105, 105, 0.5);
+		fill: rgba(105, 105, 105, 1);
 	}
 }
 
