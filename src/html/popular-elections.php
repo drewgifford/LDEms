@@ -14,13 +14,13 @@
 			</div>
 			<div class="link-list">
 			<a class="link" href="./app/?t=LDE_alt_presidential">
-				1972-1980 Presidential
+				Presidential
 			</a>
 			<a class="link" href="./app/?t=LDE_alt_senate">
 				Senate
 			</a>
 			<a class="link" href="./app/?t=LDE_alt_house_1970">
-				1969-1980 House
+				House of Representatives
 			</a>
 			<a class="link" href="./app/?t=LDE_alt_states">
 				States
