@@ -9,27 +9,35 @@
 		<p style="margin: 5px 0;">Current Maps</p>
 		<div class="navigation-3">
 			<a class="navigation-4" href="./app/?t=LDE_alt_presidential">
-				1972-1980 President
+				President
 			</a>
-			<a class="navigation-4" href="./app/?t=LDE_alt_states">
-				Senate / States (Blank)
+			<a class="navigation-4" href="./app/?t=LDE_alt_senate">
+				Senate
+			</a>
+			<a class="navigation-4" href="./app/?t=LDE_alt_house_1970">
+				House
 			</a>
 		</div>
 		<div class="navigation-3">
-			<a class="navigation-4" href="./app/?t=LDE_alt_house_1970">
-				1969-1980 House
+			<a class="navigation-4" href="./app/?t=LDE_alt_states">
+				States
 			</a>
 		</div>
 		<p style="margin: 5px 0;">Blank Leans</p>
 		<div class="navigation-3">
 			<a class="navigation-4" href="./app/?t=LDE_alt_presidential_leans">
-				Presidential
+				President
 			</a>
-			<a class="navigation-4" href="./app/?t=LDE_alt_states_leans">
-				States
+			<a class="navigation-4" href="./app/?t=LDE_alt_senate_leans">
+				Senate
 			</a>
 			<a class="navigation-4" href="./app/?t=LDE_alt_house_1970_leans">
 				House
+			</a>
+		</div>
+		<div class="navigation-3">
+			<a class="navigation-4" href="./app/?t=LDE_alt_states_leans">
+				States
 			</a>
 		</div>
 	</div>

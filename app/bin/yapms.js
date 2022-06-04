@@ -1681,6 +1681,10 @@ class MapLoader {
 				PresetLoader.loadPreset("lde_alt");
 				MapLoader.loadMap("./res/lde/LDE-states-alt.svg", 16, 0.25, "1", "takeall_noedit", "open");
 				break;
+			case "LDE_alt_senate":
+				PresetLoader.loadPreset("lde_alt");
+				MapLoader.loadMap("./res/lde/LDE-senate-alt.svg", 16, 0.25, "1", "takeall_noedit", "open");
+				break;
 				
 			case "LDE_alt_house":
 			case "LDE_alt_house_1970":
@@ -1692,6 +1696,12 @@ class MapLoader {
 				PresetLoader.loadPreset("liberalConservative");
 				MapLoader.loadMap("./res/lde/LDE-presidential-alt.svg", 16, 0.25, "lde_alt_1970_ec", "presidential", "open");
 				break;
+
+			case "LDE_alt_senate_leans":
+				PresetLoader.loadPreset("liberalConservative");
+				MapLoader.loadMap("./res/lde/LDE-senate-alt.svg", 16, 0.25, "1", "takeall_noedit", "open");
+				break;
+
 			case "LDE_alt_states_leans":
 				PresetLoader.loadPreset("liberalConservative");
 				MapLoader.loadMap("./res/lde/LDE-states-alt.svg", 16, 0.25, "1", "takeall_noedit", "open");
@@ -1790,7 +1800,7 @@ class MapLoader {
 			
 			default:
 				PresetLoader.loadPreset("lde");
-				MapLoader.loadMap("./res/lde/LDE_2022_house.svg", 16, 0.25, "1", "takeall_noedit", "open");
+				MapLoader.loadMap("./res/lde/LDE-house-1970-alt.svg", 16, 0.125, "1", "takeall_noedit", "open");
 				break;
 		}
 	}
@@ -6511,21 +6521,30 @@ class Tooltip {
 
 var tip = new Tooltip($("#tooltip"));
 
-$(document).on('mousemove', '#svgdata path, #svgdata rect', function(e){
-
+function mouse_move(e){
 	var elem = $(this);
 
 	var id = elem.attr("id");
 
+	id = id.replace("-button", "");
+	var label = id;
+	if (elem.attr("data-tooltip")){
+		label = elem.attr("data-tooltip");
+	}
+
 	for(var index = 0; index < states.length; ++index) {
 		if(states[index].name == id){
-			tip.setContent(id);
+			tip.setContent(label);
 			tip.show();
 			tip.updatePosition(e.originalEvent.pageX, e.originalEvent.pageY);
 			break;
 		}
 	}
-});
+}
+
+
+$(document).on('mousemove', '#svgdata path', mouse_move);
+$(document).on('mousemove', '#svgdata rect', mouse_move);
 
 $(document).on('mouseleave', '#outlines', function(){
 	var elem = $(this);
