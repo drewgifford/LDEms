@@ -100,9 +100,11 @@
 	<script defer src="https://www.google.com/recaptcha/api.js?render=6LeDYbEUAAAAANfuJ4FxWVjoxPgDPsFGsdTLr1Jo"></script>
 	<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/js/all.min.js"></script>
 	<script defer src="https://cdn.jsdelivr.net/npm/dom-to-image@2.6.0/dist/dom-to-image.min.js"></script>
-	<script defer src="https://cdn.jsdelivr.net/npm/panzoom@9.4.2/dist/panzoom.min.js"></script>
+	<script src='https://unpkg.com/panzoom@9.4.0/dist/panzoom.min.js'></script>
 	<script defer src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2/dist/chart.min.js"></script>
 	<script defer src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0-rc.1/dist/chartjs-plugin-datalabels.min.js"></script>
+	<script src="https://unpkg.com/@popperjs/core@2"></script>
+	<script src="https://unpkg.com/tippy.js@6"></script>
 	<script defer src="./bin/yapms.js"></script>
 </head>
 <body id="body" onresize="onResize()">
@@ -114,6 +116,7 @@
 ?>
 <div id="application-sidebar-div">
 <div id="application">
+	<div id="tooltip" class="hidden"></div>
 	<div id="legend-div"></div>
 	<div id="chart-div">
 		<div id="chart">

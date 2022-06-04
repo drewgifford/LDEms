@@ -1569,14 +1569,13 @@ class MapManager {
 				(bb.x + bb.width + bb.x) + " " + 
 				(bb.y + bb.height + bb.y));
 			MapManager.panObject = panzoom(svg, {
-				transformOrigin: {x: 0.5, y: 0.5},
+				//transformOrigin: {x: 0.5, y: 0.5},
 				autocenter: true,
 				zoomDoubleClickSpeed: 1,
 				smoothScroll: false,
 				initialX: mapdiv.offsetWidth / 2,
 				initialY: mapdiv.offsetHeight / 2,
 				initialZoom: 0.85,
-				zoomSpeed: 0.05,
 				onTouch: function(e) {
 					return false;
 				}
@@ -1676,110 +1675,122 @@ class MapLoader {
 		switch(id) {
 			case "LDE_alt_presidential":
 				PresetLoader.loadPreset("lde_alt");
-				MapLoader.loadMap("./res/lde/LDE-presidential-alt.svg", 16, 0.75, "lde_alt_1970_ec", "presidential", "open");
+				MapLoader.loadMap("./res/lde/LDE-presidential-alt.svg", 16, 0.25, "lde_alt_1970_ec", "presidential", "open");
 				break;
 			case "LDE_alt_states":
 				PresetLoader.loadPreset("lde_alt");
-				MapLoader.loadMap("./res/lde/LDE-states-alt.svg", 16, 0.75, "1", "takeall_noedit", "open");
+				MapLoader.loadMap("./res/lde/LDE-states-alt.svg", 16, 0.25, "1", "takeall_noedit", "open");
+				break;
+				
+			case "LDE_alt_house":
+			case "LDE_alt_house_1970":
+				PresetLoader.loadPreset("lde_alt");
+				MapLoader.loadMap("./res/lde/LDE-house-1970-alt.svg", 16, 0.125, "1", "takeall_noedit", "open");
 				break;
 				
 			case "LDE_alt_presidential_leans":
 				PresetLoader.loadPreset("liberalConservative");
-				MapLoader.loadMap("./res/lde/LDE-presidential-alt.svg", 16, 0.75, "lde_alt_1970_ec", "presidential", "open");
+				MapLoader.loadMap("./res/lde/LDE-presidential-alt.svg", 16, 0.25, "lde_alt_1970_ec", "presidential", "open");
 				break;
 			case "LDE_alt_states_leans":
 				PresetLoader.loadPreset("liberalConservative");
-				MapLoader.loadMap("./res/lde/LDE-states-alt.svg", 16, 0.75, "1", "takeall_noedit", "open");
+				MapLoader.loadMap("./res/lde/LDE-states-alt.svg", 16, 0.25, "1", "takeall_noedit", "open");
+				break;
+				
+			case "LDE_alt_house_leans":
+			case "LDE_alt_house_1970_leans":
+				PresetLoader.loadPreset("liberalConservative");
+				MapLoader.loadMap("./res/lde/LDE-house-1970-alt.svg", 16, 0.125, "1", "takeall_noedit", "open");
 				break;
 				
 			case "LDE_2012_house":
 				PresetLoader.loadPreset("lde");
-				MapLoader.loadMap("./res/lde/LDE_2012_house.svg", 16, 0.75, "1", "takeall_noedit", "open");
+				MapLoader.loadMap("./res/lde/LDE_2012_house.svg", 16, 0.25, "1", "takeall_noedit", "open");
 				break;
 
 			case "LDE_house":
 			case "LDE_2022_house":
 				PresetLoader.loadPreset("lde");
-				MapLoader.loadMap("./res/lde/LDE_2022_house.svg", 16, 0.75, "1", "takeall_noedit", "open");
+				MapLoader.loadMap("./res/lde/LDE_2022_house.svg", 16, 0.25, "1", "takeall_noedit", "open");
 				break;
 
 			case "LDE_house_leans":
 				PresetLoader.loadPreset("liberalConservative");
-				MapLoader.loadMap("./res/lde/LDE_2022_house.svg", 16, 0.75, "1", "takeall_noedit", "open");
+				MapLoader.loadMap("./res/lde/LDE_2022_house.svg", 16, 0.25, "1", "takeall_noedit", "open");
 				break;
 
 			case "LDE_presidential":
 			case "LDE_presidential_2024":
 				PresetLoader.loadPreset("lde");
-				MapLoader.loadMap("./res/lde/LDE_presidential.svg", 16, 0.75, "lde_2024_ec", "presidential", "open");
+				MapLoader.loadMap("./res/lde/LDE_presidential.svg", 16, 0.25, "lde_2024_ec", "presidential", "open");
 				break;
 			
 			case "LDE_presidential_2012":
 				PresetLoader.loadPreset("lde");
-				MapLoader.loadMap("./res/lde/LDE_presidential.svg", 16, 0.75, "lde_2012_ec", "presidential", "open");
+				MapLoader.loadMap("./res/lde/LDE_presidential.svg", 16, 0.25, "lde_2012_ec", "presidential", "open");
 				break;
 
 			case "LDE_senate_blank":
 			case "LDE_senate":
 				PresetLoader.loadPreset("lde");
-				MapLoader.loadMap("./res/lde/LDE_senate.svg", 16, 0.75, "1", "takeall_noedit", "open");
+				MapLoader.loadMap("./res/lde/LDE_senate.svg", 16, 0.25, "1", "takeall_noedit", "open");
 				break;
 
 			case "LDE_senate_2022":
 				PresetLoader.loadPreset("lde");
-				MapLoader.loadMap("./res/lde/LDE_senate.svg", 16, 0.75, "1", "senatorial", "2022");
+				MapLoader.loadMap("./res/lde/LDE_senate.svg", 16, 0.25, "1", "senatorial", "2022");
 				break;
 				
 			case "LDE_senate_2012":
 				PresetLoader.loadPreset("lde");
-				MapLoader.loadMap("./res/lde/LDE_senate.svg", 16, 0.75, "1", "senatorial", "2012");
+				MapLoader.loadMap("./res/lde/LDE_senate.svg", 16, 0.25, "1", "senatorial", "2012");
 				break;
 
 			case "LDE_states":
 				PresetLoader.loadPreset("lde");
-				MapLoader.loadMap("./res/lde/LDE_senate.svg", 16, 0.75, "1", "takeall_noedit", "open");
+				MapLoader.loadMap("./res/lde/LDE_senate.svg", 16, 0.25, "1", "takeall_noedit", "open");
 				break;
 
 			case "FIJI_presidential":
 			case "FIJI_presidential_2010":
 			case "FIJI_presidential_2000":
 				PresetLoader.loadPreset("fiji");
-				MapLoader.loadMap("./res/lde/Fiji_presidential_2000.svg", 16, 0.75, "fiji_2000_ec", "presidential", "open");
+				MapLoader.loadMap("./res/lde/Fiji_presidential_2000.svg", 16, 0.25, "fiji_2000_ec", "presidential", "open");
 				break;
 
 			case "FIJI_presidential_leanings":
 				PresetLoader.loadPreset("liberalConservative");
-				MapLoader.loadMap("./res/lde/Fiji_presidential_2000.svg", 16, 0.75, "fiji_2000_ec", "presidential", "open");
+				MapLoader.loadMap("./res/lde/Fiji_presidential_2000.svg", 16, 0.25, "fiji_2000_ec", "presidential", "open");
 				break;
 
 			case "FIJI_house":
 			case "FIJI_house_2010":
 			case "FIJI_house_2000":
 				PresetLoader.loadPreset("fiji");
-				MapLoader.loadMap("./res/lde/Fiji_house_2000.svg", 16, 0.75, "1", "takeall_noedit", "open");
+				MapLoader.loadMap("./res/lde/Fiji_house_2000.svg", 16, 0.25, "1", "takeall_noedit", "open");
 				break;
 
 			case "FIJI_house_leanings":
 			case "FIJI_house_2000_leanings":
 				PresetLoader.loadPreset("liberalConservative");
-				MapLoader.loadMap("./res/lde/Fiji_house_2000.svg", 16, 0.75, "1", "takeall_noedit", "open");
+				MapLoader.loadMap("./res/lde/Fiji_house_2000.svg", 16, 0.25, "1", "takeall_noedit", "open");
 				break;
 
 			case "FIJI_senate":
 			case "FIJI_senate_2000":
 				PresetLoader.loadPreset("fiji");
-				MapLoader.loadMap("./res/lde/Fiji_senate_2000.svg", 16, 0.75, "1", "takeall_noedit", "open");
+				MapLoader.loadMap("./res/lde/Fiji_senate_2000.svg", 16, 0.25, "1", "takeall_noedit", "open");
 				break;
 
 			case "FIJI_senate_leanings":
 			case "FIJI_senate_2000_leanings":
 				PresetLoader.loadPreset("liberalConservative");
-				MapLoader.loadMap("./res/lde/Fiji_senate_2000.svg", 16, 0.75, "1", "takeall_noedit", "open");
+				MapLoader.loadMap("./res/lde/Fiji_senate_2000.svg", 16, 0.25, "1", "takeall_noedit", "open");
 				break;
 			
 			default:
 				PresetLoader.loadPreset("lde");
-				MapLoader.loadMap("./res/lde/LDE_2022_house.svg", 16, 0.75, "1", "takeall_noedit", "open");
+				MapLoader.loadMap("./res/lde/LDE_2022_house.svg", 16, 0.25, "1", "takeall_noedit", "open");
 				break;
 		}
 	}
@@ -1854,7 +1865,7 @@ class MapLoader {
 
 		/* TURNING OFF LABELS BREAKS THE LEANS ON THE GRAPH */
 		strokeMultiplier = strokewidth;
-		strokeMultiplier = 0.25;
+		//strokeMultiplier = 0.25;
 		var dataname = './data/' + type + '_' + year;
 
 		console.log('Loading ' + filename);
@@ -1881,7 +1892,7 @@ class MapLoader {
 				initialX: mapdiv.offsetWidth / 2,
 				initialY: mapdiv.offsetHeight / 2,
 				initialZoom: 0.85,
-				zoomSpeed: 0.05,
+				zoomSpeed: 0.1,
 				onTouch: function(e) {
 					return false;
 				}
@@ -3309,6 +3320,17 @@ class State {
 		/* Call This When The State Changes Color */
 		this.onChange = function() {}
 	}
+	
+	updateBlankLocator() {
+		
+		if (this.candidate == 'Tossup'){
+			if ($("#blanks-toggle").hasClass("toggled")){
+				$("#outlines #"+this.name).addClass("located");
+			}
+		} else {
+			$("#outlines #"+this.name).removeClass("located");
+		}
+	}
 
 	resetVoteCount() {
 		if(parseInt(this.dataid)) {
@@ -3634,6 +3656,8 @@ class State {
 
 		if(this.onChange)
 		this.onChange();
+		
+		this.updateBlankLocator();
 	}
 	
 	highlight() {
@@ -3702,6 +3726,8 @@ class State {
 		if(this.onChange) {
 			this.onChange();
 		}
+		
+		this.updateBlankLocator();
 	}
 	
 	test_setColor(options) {
@@ -5215,6 +5241,28 @@ function unsetBattleHorizontal() {
 	bottombar.style.minWidth = '0';
 }
 
+function toggleBlanks(){
+	var toggled = $("#blanks-toggle").hasClass("toggled");
+	
+	if (!toggled){
+		console.log("Toggling on...");
+		
+		
+		$("#blanks-toggle").addClass("toggled");
+		$("#outlines > *").each(function(index){
+			for(var index = 0; index < states.length; ++index) {
+				if(states[index].candidate == 'Tossup'){
+					$("#outlines #"+states[index].name).addClass("located"); 
+				}
+			}
+		});
+	} else {
+		$("#outlines > *").removeClass("located");
+		$("#blanks-toggle").removeClass("toggled");
+	}
+}
+
+
 function toggleYAPNews() {
 	var yapnews = document.getElementById("sidebar");
 	if(yapnews !== null) {
@@ -5770,7 +5818,6 @@ class SaveMap {
 			data['proportional'][state.name]['disabled'] = state.disabled;
 		}
 
-		console.log(JSON.stringify(data));
 	}
 
 	static upload(img, token) {
@@ -6413,42 +6460,78 @@ function rgbToHex(rgb) {
     return hex;
 }
 
+class Tooltip {
+	constructor (elem){
+		this.elem = elem;
+		this.enabled = false;
+		this.shown = true;
+		elem.addClass("hidden");
+	}
+	
+	updateVisiblity(){
+		if (this.enabled){
+			if (this.shown){
+				this.elem.removeClass("hidden");
+				return;
+			}
+		}
+		this.elem.addClass("hidden");
+	}
 
-activeIds = {};
-$(document).on('mouseover', '#svgdata path, #svgdata rect', function(){
+	updatePosition(pageX, pageY){
+		this.elem.css("left", pageX - this.elem.width()/2-5);
+		this.elem.css("top", pageY - this.elem.height()*2-5);
+		this.updateVisiblity();
+	}
 
-	console.log("HI")
+	setContent(str){
+		this.elem.html(str);
+	}
+	
+	show(){
+		this.shown = true;
+		this.updateVisiblity();
+	}
+	hide(){
+		this.shown = false;
+		this.updateVisiblity();
+	}
+	
+	enable(){
+		this.enabled = true;
+		this.updateVisiblity();
+	}
+	
+	disable(){
+		this.enabled = false;
+		this.updateVisiblity();
+	}
+	
+}
+
+var tip = new Tooltip($("#tooltip"));
+
+$(document).on('mousemove', '#svgdata path, #svgdata rect', function(e){
 
 	var elem = $(this);
 
 	var id = elem.attr("id");
 
-	/*if (!(id in activeIds)){
-		
-
-
-		var fill = elem.css("fill");
-
-		activeIds[id] = fill;
-
-		fill = rgbToHex(fill);
-		
-		var newFill = LightenDarkenColor(fill, -30);
-
-		console.log("NEW FILL", newFill)
-
-		elem.css("fill","#"+newFill);
-
-	}*/
-
-
-
-
+	for(var index = 0; index < states.length; ++index) {
+		if(states[index].name == id){
+			tip.setContent(id);
+			tip.show();
+			tip.updatePosition(e.originalEvent.pageX, e.originalEvent.pageY);
+			break;
+		}
+	}
 });
 
-$(document).on('mouseleave', '#svgdata path, #svgdata rect', function(){
+$(document).on('mouseleave', '#outlines', function(){
 	var elem = $(this);
 	var id = elem.attr("id");
+
+	tip.hide();
 
 	/*if (id in activeIds){
 		fill = activeIds[id];
@@ -6462,4 +6545,21 @@ $(document).on('mouseleave', '#svgdata path, #svgdata rect', function(){
 	
 
 
-})
+});
+
+function toggleTooltips(){
+	var toggled = $("#tooltips-toggle").hasClass("toggled");
+	
+	if (!toggled){
+		$("#tooltips-toggle").addClass("toggled");
+		tip.updatePosition(0, 0);
+		tip.enable();
+		
+	}
+	else {
+		$("#tooltips-toggle").removeClass("toggled");
+		tip.updatePosition(0, 0);
+		tip.disable();
+	}
+	
+}

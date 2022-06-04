@@ -58,17 +58,15 @@
 		<i class="fas fa-palette"></i> Style
 	</div>
 
-	<div class="click-button" onclick="displayMenu('miscmenu')" style="white-space: nowrap;">
-		<i class="fas fa-clipboard"></i> Misc
-	</div>
-	
-	<div class="click-button" style="white-space: nowrap;">
-		<a class="click-button" href="https://letsdoelections.com/privacypolicy.html" target="_blank" rel="noreferrer">
-		<i class="fas fa-user-secret"></i> Privacy
-		</a>
-	</div>
-
 	<div id="sidebar-toggle" class="click-button" onclick="toggleYAPNews()" style="white-space: nowrap; margin-left: 0px;">
 		<i class="fas fa-bars"></i> Sidebar
+	</div>
+
+	<div id="blanks-toggle" class="click-button" onclick="toggleBlanks()" style="white-space: nowrap; margin-left: 0px;">
+		<i class="fas fa-search"></i> Locate Blanks
+	</div>
+
+	<div id="tooltips-toggle" class="click-button" onclick="toggleTooltips()" style="white-space: nowrap; margin-left: 0px;">
+		<i class="fas fa-comment-alt"></i> Tooltips
 	</div>
 </div>

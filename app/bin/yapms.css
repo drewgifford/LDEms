@@ -21,6 +21,35 @@
 	display: none !important;
 }
 
+.toggled {
+	color: rgb(59, 62, 67) !important;
+	background-color: white !important;
+	border-color: black;
+}
+.located {
+	stroke: red;
+	stroke-width: 1px;
+	animation: pulsate 1s ease-in-out infinite;
+}
+
+@keyframes pulsate {
+	0% {
+		stroke-width: 0.25px;
+		stroke: rgba(255, 255, 255, 0.5);
+		fill: rgba(105, 105, 105, 0.5);
+	}
+	50% {
+		stroke-width: 1px;
+		stroke: rgba(255, 0, 0, 1);
+		fill: rgba(155, 155, 155, 1);
+	}
+	100% {
+		stroke-width: 0.25px;
+		stroke: rgba(255, 255, 255, 0.5);
+		fill: rgba(105, 105, 105, 0.5);
+	}
+}
+
 #mysaves-header {
 	display: flex;
 	flex-direction: row;
@@ -1335,4 +1364,33 @@ a {
 
 .consent-button:hover {
 	box-shadow: 2px 3px 3px #555555;
+}
+
+#tooltip {
+	background: rgb(0,0,0);
+	border: 1px solid white;
+	color: white;
+	display: inline-block;
+	text-align: center;
+	min-width: 50px;
+	padding: 5px;
+	margin: 0;
+	position: fixed;
+	z-index: 9999;
+}
+#tooltip::before {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	background: rgb(0,0,0);
+	transform: rotate(45deg);
+	left: calc(50% - 5px);
+	top: calc(100% - 5px);
+	border-bottom: 1px solid white;
+	border-right: 1px solid white;
+}
+#tooltip.hidden {
+	display: none;
 }
