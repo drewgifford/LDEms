@@ -2453,9 +2453,9 @@ class PresetLoader {
 
 	static loadPresetLiberalConservative(){
 		var liberal = new Candidate('Liberal', 
-			['#741B47', '#A64D79', '#C27BA0', '#D5A6BD']);
+			['#5D1338', '#B54A80', '#DD98BB', '#AF92A0']);
 		var conservative = new Candidate('Conservative',
-			['#1C4587', '#1155CC', '#3C78D8', '#A4C2F4']);
+			['#11356E', '#1155CC', '#6CA2F9', '#9BAAC5']);
 
 		CandidateManager.candidates['Liberal'] = liberal;
 		CandidateManager.candidates['Conservative'] = conservative;
