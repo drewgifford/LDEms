@@ -2,10 +2,6 @@
 	<div class="click-button" onclick="MapLoader.clearMap()" style="white-space: nowrap;">
 	<i class="fas fa-window-close"></i> Clear
 	</div>
-	
-	<div class="click-button" onclick="displayMenu('mapmenu')" style="white-space: nowrap;">
-	<i class="fas fa-map"></i> Map
-	</div>
 
 	<div id="modebutton-paint" class="click-button mode-button" onclick='setMode("paint")' style='opacity: 0.5'>
 		<i class="fas fa-paint-brush"></i>

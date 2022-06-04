@@ -15,13 +15,21 @@
 				Senate / States (Blank)
 			</a>
 		</div>
+		<div class="navigation-3">
+			<a class="navigation-4" href="./app/?t=LDE_alt_house_1970">
+				1969-1980 House
+			</a>
+		</div>
 		<p style="margin: 5px 0;">Blank Leans</p>
 		<div class="navigation-3">
 			<a class="navigation-4" href="./app/?t=LDE_alt_presidential_leans">
 				Presidential
 			</a>
 			<a class="navigation-4" href="./app/?t=LDE_alt_states_leans">
-				Senate / States
+				States
+			</a>
+			<a class="navigation-4" href="./app/?t=LDE_alt_house_1970_leans">
+				House
 			</a>
 		</div>
 	</div>

@@ -19,6 +19,9 @@
 			<a class="link" href="./app/?t=LDE_alt_states">
 				Senate / States (Blank)
 			</a>
+			<a class="link" href="./app/?t=LDE_alt_states">
+				1969-1980 House
+			</a>
 			</div>
 		</div>
 	</div>
