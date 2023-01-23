@@ -7,9 +7,27 @@
 	<div class="featured-section-body">
 		<div class="info-box popular-1">
 			<div class="info-box-header">
+				<img src="app/res/flags/tas.png">
+				<h3>
+					Toad's America Sim
+				</h3>
+			</div>
+			<div class="link-list">
+			<a class="link" href="./app/?t=TAS_senate">
+				Senate
+			</a>
+			<a class="link" href="./app/?t=TAS_house">
+				House
+			</a>
+			</div>
+		</div>
+	</div>
+	<div class="featured-section-body">
+		<div class="info-box popular-1">
+			<div class="info-box-header">
 				<img src="app/res/flags/usa.svg">
 				<h3>
-					Let's Do Elections (NEW!)
+					Let's Do Elections 2.0
 				</h3>
 			</div>
 			<div class="link-list">
@@ -20,7 +38,7 @@
 				Senate
 			</a>
 			<a class="link" href="./app/?t=LDE_alt_house_1970">
-				House of Representatives
+				House
 			</a>
 			<a class="link" href="./app/?t=LDE_alt_states">
 				States

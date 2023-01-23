@@ -1673,6 +1673,17 @@ class MapLoader {
 	// Load map based off of php t parameter
 	static loadMapFromId(id) {
 		switch(id) {
+
+			case "TAS_house":
+				PresetLoader.loadPreset("tas");
+				MapLoader.loadMap("./res/tas/TAS-house1980.svg", 16, 0.25, "1", "takeall_noedit", "open");
+				break;
+
+			case "TAS_senate":
+				PresetLoader.loadPreset("tas");
+				MapLoader.loadMap("./res/tas/TAS-senate1980.svg", 16, 0.25, "1", "takeall_noedit", "open");
+				break;
+
 			case "LDE_alt_presidential":
 				PresetLoader.loadPreset("lde_alt");
 				MapLoader.loadMap("./res/lde/LDE-presidential-alt.svg", 16, 0.25, "lde_alt_1970_ec", "presidential", "open");
@@ -2315,6 +2326,9 @@ class PresetLoader {
 			case 'liberalConservative':
 				PresetLoader.loadPresetLiberalConservative();
 				break;
+			case 'tas':
+				PresetLoader.loadPresetTAS();
+				break;
 			case 'lde':
 				PresetLoader.loadPresetLDE();
 				break;
@@ -2404,6 +2418,21 @@ class PresetLoader {
 
 	// republicans vs democrats
 	
+	static loadPresetTAS() {
+		var democrat = new Candidate('Democrat', 
+			['#1c408c', '#577ccc', '#8aafff', '#949bb3']);
+		var republican = new Candidate('Republican', 
+			['#f00034', '#ff5865', '#ff8b98', '#cf8980']);
+		var ind = new Candidate('Independent (IND)',
+			['#595959', '#949494', '#CFCFCF', '#F2F2F2']);
+		
+		CandidateManager.candidates['Democrat (DEM)'] = democrat;
+		CandidateManager.candidates['Republican (GOP)'] = republican;
+		CandidateManager.candidates['Independent (IND)'] = ind;
+		
+		
+	}
+
 	static loadPresetAltLDE() {
 		var democrat = new Candidate('Democrat (DEM)', 
 			['#1c408c', '#577ccc', '#8aafff', '#949bb3']);

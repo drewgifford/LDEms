@@ -1,8 +1,28 @@
 <div class="navigation-1">
 	<div class="header">
+		<img src="app/res/flags/tas.png">
+		<h3>
+			Toad's America Sim
+		</h3>
+	</div>
+	<div class="navigation-2">
+		<p style="margin: 5px 0;">Current Maps</p>
+		<div class="navigation-3">
+			<a class="navigation-4" href="./app/?t=TAS_senate">
+				Senate
+			</a>
+			<a class="navigation-4" href="./app/?t=TAS_house">
+				House
+			</a>
+		</div>
+	</div>
+</div>
+
+<div class="navigation-1">
+	<div class="header">
 		<img src="app/res/flags/usa.svg">
 		<h3>
-			Let's Do Elections (NEW!)
+			Let's Do Elections 2.0
 		</h3>
 	</div>
 	<div class="navigation-2">
@@ -47,7 +67,7 @@
 	<div class="header">
 		<img src="app/res/flags/usa.svg">
 		<h3>
-			Let's Do Elections (Legacy)
+			Let's Do Elections 1.0
 		</h3>
 	</div>
 	<div class="navigation-2">
