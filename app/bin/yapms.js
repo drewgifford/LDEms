@@ -1674,14 +1674,14 @@ class MapLoader {
 	static loadMapFromId(id) {
 		switch(id) {
 
-			case "TAS_house":
+			case "LDE3_house":
 				PresetLoader.loadPreset("tas");
 				MapLoader.loadMap("./res/tas/TAS-house1980.svg", 16, 0.25, "1", "takeall_noedit", "open");
 				break;
 
-			case "TAS_senate":
+			case "LDE3_senate":
 				PresetLoader.loadPreset("tas");
-				MapLoader.loadMap("./res/tas/TAS-senate1980.svg", 16, 0.25, "1", "takeall_noedit", "open");
+				MapLoader.loadMap("./res/tas/LDE3-senate.svg", 16, 0.25, "1", "takeall_noedit", "open");
 				break;
 
 			case "LDE_alt_presidential":

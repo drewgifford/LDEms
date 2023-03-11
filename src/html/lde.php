@@ -1,14 +1,14 @@
 <div class="navigation-1">
 	<div class="header">
-		<img src="app/res/flags/tas.png">
+		<img src="app/res/flags/lde3.png">
 		<h3>
-			Toad's America Sim
+			Let's Do Elections 3
 		</h3>
 	</div>
 	<div class="navigation-2">
 		<p style="margin: 5px 0;">Current Maps</p>
 		<div class="navigation-3">
-			<a class="navigation-4" href="./app/?t=TAS_senate">
+			<a class="navigation-4" href="./app/?t=LDE3_senate">
 				Senate
 			</a>
 			<a class="navigation-4" href="./app/?t=TAS_house">
