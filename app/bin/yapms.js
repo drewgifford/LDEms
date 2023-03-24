@@ -1675,12 +1675,12 @@ class MapLoader {
 		switch(id) {
 
 			case "LDE3_house":
-				PresetLoader.loadPreset("tas");
+				PresetLoader.loadPreset("lde3");
 				MapLoader.loadMap("./res/tas/TAS-house1980.svg", 16, 0.25, "1", "takeall_noedit", "open");
 				break;
 
 			case "LDE3_senate":
-				PresetLoader.loadPreset("tas");
+				PresetLoader.loadPreset("lde3");
 				MapLoader.loadMap("./res/tas/LDE3-senate.svg", 16, 0.25, "1", "takeall_noedit", "open");
 				break;
 
@@ -2326,6 +2326,9 @@ class PresetLoader {
 			case 'liberalConservative':
 				PresetLoader.loadPresetLiberalConservative();
 				break;
+			case 'lde3':
+				PresetLoader.loadPresetLDE3();
+				break;
 			case 'tas':
 				PresetLoader.loadPresetTAS();
 				break;
@@ -2452,6 +2455,29 @@ class PresetLoader {
 		CandidateManager.candidates['Independent (IND)'] = ind;
 		
 		
+	}
+
+	static loadPresetLDE3() {
+		var democrat = new Candidate('Democrat (DEM)', 
+			['#1c408c', '#577ccc', '#8aafff', '#949bb3']);
+		var gop = new Candidate('Grand Old Party (GOP)', 
+			['#f00034', '#ff5865', '#ff8b98', '#cf8980']);
+		var lc = new Candidate('Liberty Coalition (LC)',
+			['#E6B700', '#e8c84d', '#ffe78a', '#b8a252']);
+		var cdu = new Candidate('Christian Democratic Union (CDU)',
+			['#822194', '#AE20C6', '#DB14FF', '#A369AE']);
+		var ind = new Candidate('Independent (IND)',
+			['#595959', '#949494', '#CFCFCF', '#F2F2F2']);
+		/*var ppa;
+		var libdem;
+		var akip;
+		var ind;*/
+
+		CandidateManager.candidates['Democrat (DEM)'] = democrat;
+		CandidateManager.candidates['Grand Old Party (GOP)'] = gop;
+		CandidateManager.candidates['Liberty Coalition (LC)'] = lc;
+		CandidateManager.candidates['Christian Democratic Union (CDU)'] = cdu;
+		CandidateManager.candidates['Independent (IND)'] = ind;
 	}
 	
 	static loadPresetLDE() {
