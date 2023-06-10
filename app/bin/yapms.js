@@ -1674,7 +1674,14 @@ class MapLoader {
 	static loadMapFromId(id) {
 		switch(id) {
 
+			case "LDE3_house1990":
+				PresetLoader.loadPreset("lde3");
+				MapLoader.loadMap("./res/tas/LDE3-house1990.svg", 16, 0.25, "1", "takeall_noedit", "open");
+				break;
+
+			case "TAS_house":
 			case "LDE3_house":
+			case "LDE3_house1980":
 				PresetLoader.loadPreset("lde3");
 				MapLoader.loadMap("./res/tas/TAS-house1980.svg", 16, 0.25, "1", "takeall_noedit", "open");
 				break;
@@ -2460,8 +2467,6 @@ class PresetLoader {
 	static loadPresetLDE3() {
 		var democrat = new Candidate('Democrat (DEM)', 
 			['#1c408c', '#577ccc', '#8aafff', '#949bb3']);
-		var gop = new Candidate('Grand Old Party (GOP)', 
-			['#f00034', '#ff5865', '#ff8b98', '#cf8980']);
 		var lc = new Candidate('Liberty Coalition (LC)',
 			['#E6B700', '#e8c84d', '#ffe78a', '#b8a252']);
 		var cdu = new Candidate('Christian Democratic Union (CDU)',
@@ -2474,7 +2479,6 @@ class PresetLoader {
 		var ind;*/
 
 		CandidateManager.candidates['Democrat (DEM)'] = democrat;
-		CandidateManager.candidates['Grand Old Party (GOP)'] = gop;
 		CandidateManager.candidates['Liberty Coalition (LC)'] = lc;
 		CandidateManager.candidates['Christian Democratic Union (CDU)'] = cdu;
 		CandidateManager.candidates['Independent (IND)'] = ind;
