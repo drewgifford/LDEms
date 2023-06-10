@@ -1817,8 +1817,8 @@ class MapLoader {
 				break;
 			
 			default:
-				PresetLoader.loadPreset("lde");
-				MapLoader.loadMap("./res/lde/LDE-house-1970-alt.svg", 16, 0.125, "1", "takeall_noedit", "open");
+				PresetLoader.loadPreset("lde3");
+				MapLoader.loadMap("./res/tas/LDE3-house1990.svg", 16, 0.25, "1", "takeall_noedit", "open");
 				break;
 		}
 	}
