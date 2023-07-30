@@ -97,8 +97,8 @@ class Voter {
   
           let cand = Object.assign({}, candidate);
 
-          cand.popularity *= (cand.effectiveness/100 + 0.5);
-          cand.nameRec *= (cand.effectiveness/100 + 0.5);
+          cand.popularity *= (cand.effectiveness/300 + 0.833);
+          cand.nameRec *= (cand.effectiveness/300 + 0.833);
         
           // If a user has less than 50 popularity, give them a debuff. Otherwise, give them a buff
           let popularityFactor = (cand.popularity / 100) * 2 - 1
