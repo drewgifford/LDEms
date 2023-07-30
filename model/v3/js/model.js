@@ -37,6 +37,15 @@ function mixColors(colors){
   return rgbToHex(parseInt(finalColor[0]), parseInt(finalColor[1]), parseInt(finalColor[2]));
 }*/
 
+function lerpColor(colorFrom, colorTo, alpha){
+
+  for(var i = 0; i < 3; i++){
+    colorFrom[i] = parseInt(colorFrom[i] + (colorTo[i] - colorFrom[i]) * alpha);
+  }
+
+  return colorFrom;
+}
+
 function componentToHex(c) {
   let hex = c.toString(16);
   return hex.length == 1 ? "0" + hex : hex;
@@ -176,23 +185,26 @@ onmessage = function(ev){
                 let voter = new Voter(x,y,z);
                 let distance = voter.getDistance(state);
 
-                let voteEffect = Math.max(Math.pow((-distance + MAX_DISTANCE) / MAX_DISTANCE, 3), 0);
+                let voteEffect = Math.pow((-distance + MAX_DISTANCE) / MAX_DISTANCE, 3);
 
                 let votedFor = voter.getVote(candidates, MAX_DISTANCE);
 
                 if(!votedFor) continue;
 
                 votedFor.votes += voteEffect;
+                votedFor.votes = Math.max(votedFor.votes, 0);
 
                 var rgb = hexToRgb(votedFor.color);
                 sliceColors.push([rgb[0],rgb[1],rgb[2]]);
 
-                totalEffect += voteEffect;
+                totalEffect += Math.max(voteEffect, 0);
 
             }
 
-            let weight = parseInt((1 - Math.min(totalEffect / (0.75*AMOUNT/step), 1)) * 255);
-            let finalColor = mixColors([mixColors(sliceColors), [weight, weight, weight]]);
+            let weight = (1 - Math.min(totalEffect / (0.75*AMOUNT/step), 1));
+
+            let finalColor = lerpColor(mixColors(sliceColors), [255, 255, 255], weight);
+
             let sliceRgb = rgbToHex(finalColor);
 
             this.postMessage(["drawPixel", x, y, sliceRgb, step]);
