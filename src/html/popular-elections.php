@@ -16,8 +16,11 @@
 			<a class="link" href="./app/?t=LDE3_senate">
 				Senate
 			</a>
+			<a class="link" href="./app/?t=LDE3_house1990">
+				House (1992-2001)
+			</a>
 			<a class="link" href="./app/?t=LDE3_house">
-				House
+				House (1982-1991)
 			</a>
 			</div>
 		</div>
