@@ -107,7 +107,7 @@ class Voter {
           let knowsCandidate = rand < ((cand.popularity / 200 + 0.5) * (cand.nameRec / 100)*0.75 + 0.25);
           
           // Add a modifier to the distance so when we check who the voter votes for, we are skewed to those closer to the voter.
-          cand.distance = Math.max(MAX_DISTANCE - distance);
+          cand.distance = Math.max(MAX_DISTANCE - distance, 0);
           
           if(knowsCandidate) processedCands.push(cand);
       }
@@ -176,7 +176,7 @@ onmessage = function(ev){
                 let voter = new Voter(x,y,z);
                 let distance = voter.getDistance(state);
 
-                let voteEffect = Math.pow((-distance + MAX_DISTANCE) / MAX_DISTANCE, 3);
+                let voteEffect = Math.max(Math.pow((-distance + MAX_DISTANCE) / MAX_DISTANCE, 3), 0);
 
                 let votedFor = voter.getVote(candidates, MAX_DISTANCE);
 

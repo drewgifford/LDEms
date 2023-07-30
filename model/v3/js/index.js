@@ -336,8 +336,8 @@ worker.onmessage = function(message){
 
 async function runModel(){
 
-    context.fillStyle = "#fff";
-    context.fillRect(0, 0, context.canvas.offsetWidth, context.canvas.offsetHeight);
+    //context.fillStyle = "#fff";
+    //context.fillRect(0, 0, context.canvas.offsetWidth, context.canvas.offsetHeight);
 
     let state = JSON.parse(JSON.stringify(STATE));
     let candidates = JSON.parse(JSON.stringify(CANDIDATES));
