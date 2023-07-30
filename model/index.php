@@ -20,6 +20,7 @@
             
 
             <h1>Let's Do Elections Models</h1>
+            <p><a href="/">&larr; Back to Main Site</a></p>
             <p>This is a collection of models I have used for the Let's Do Elections mock government server over the past two years. These models are somewhat simplified, as I can't simulate events and spending in an easy way on the browser.</p>
 
             <p>Want to join the creator's Mock government? Click below!</p>

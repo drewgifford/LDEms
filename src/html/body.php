@@ -20,6 +20,7 @@
 	<?php
 		require './src/html/help-box.php';
 		require './src/html/featured.php';
+		
 	?>
 	</div>
 </div>
