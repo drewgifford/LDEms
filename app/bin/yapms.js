@@ -2467,10 +2467,8 @@ class PresetLoader {
 	static loadPresetLDE3() {
 		var democrat = new Candidate('Democrat (DEM)', 
 			['#1c408c', '#577ccc', '#8aafff', '#949bb3']);
-		var lc = new Candidate('Liberty Coalition (LC)',
-			['#E6B700', '#e8c84d', '#ffe78a', '#b8a252']);
-		var cdu = new Candidate('Christian Democratic Union (CDU)',
-			['#822194', '#AE20C6', '#DB14FF', '#A369AE']);
+		var ucp = new Candidate('United Conservative Party (UCP)',
+			['#8F2200', '#E9582B', '#FE8B68', '#DAA99A']);
 		var ind = new Candidate('Independent (IND)',
 			['#595959', '#949494', '#CFCFCF', '#F2F2F2']);
 		/*var ppa;
@@ -2479,8 +2477,7 @@ class PresetLoader {
 		var ind;*/
 
 		CandidateManager.candidates['Democrat (DEM)'] = democrat;
-		CandidateManager.candidates['Liberty Coalition (LC)'] = lc;
-		CandidateManager.candidates['Christian Democratic Union (CDU)'] = cdu;
+		CandidateManager.candidates['United Conservative Party (UCP)'] = ucp;
 		CandidateManager.candidates['Independent (IND)'] = ind;
 	}
 	
