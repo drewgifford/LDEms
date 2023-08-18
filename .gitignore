@@ -8,3 +8,4 @@
 /app/maps/*
 /app/src/back-html2canvas.min.js
 /node_modules
+/campaign/load.js
