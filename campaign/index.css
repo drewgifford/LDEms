@@ -1,0 +1,58 @@
+body {
+    background-color: #36393e;
+    }
+
+    * {
+    font-family: sans-serif;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    
+    font-family: "PT Sans";
+    }
+    input,select,option {
+    color: #2f3136 !important;
+    }
+
+    .error {
+    color: red;
+    }
+    p,h1,h2,h3 {
+    margin: 0;
+    padding: 0;
+    }
+    .top {
+    display: block;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(30, 30, 35, 0.95);
+    }
+    .top .container {
+    max-width: 1400px;
+    margin: 1em auto;
+    display: block;
+    }
+    .events {
+    padding-top: 5em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1400px;
+    margin: auto;
+    row-gap: 10px;
+    column-gap: 10px;
+    }
+    .event {
+    padding: 2em;
+    border: 1px solid white;
+    background: #202225;
+    }
+    .event pre {
+    width: 100%;
+    white-space: pre-wrap;
+    color: #eee;
+    
+    }
