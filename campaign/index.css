@@ -56,3 +56,8 @@ body {
     color: #eee;
     
     }
+    .event img {
+        float: right;
+        max-width: 40%;
+        padding: 1em;
+    }

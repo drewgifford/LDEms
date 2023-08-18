@@ -9,13 +9,21 @@ let eventsJson;
     $(".events").html("");
     
     for(var event of events){
+
+        let str="";
+        if(Object.keys(event).includes("Url")){
+            str = `<img src='${event.Url}'/>`
+        }
+
         $(".events").append(`
         
         <div class="event">
-        
+            
             <h2>${event.Title.replaceAll("__","").replaceAll("*","")}</h2>
+            ${str}
             <pre>${event.Description.replaceAll("__","").replaceAll("*","")}</pre>
-        
+            
+
         </div>
         `)
         
