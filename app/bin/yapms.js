@@ -1686,7 +1686,13 @@ class MapLoader {
 				MapLoader.loadMap("./res/tas/TAS-house1980.svg", 16, 0.25, "1", "takeall_noedit", "open");
 				break;
 
+			case "LDE3_senate2000":
+				PresetLoader.loadPreset("lde3");
+				MapLoader.loadMap("./res/tas/LDE3-senate2000.svg", 16, 0.25, "1", "takeall_noedit", "open");
+				break;
+
 			case "LDE3_senate":
+			case "LDE3_senate1980":
 				PresetLoader.loadPreset("lde3");
 				MapLoader.loadMap("./res/tas/LDE3-senate.svg", 16, 0.25, "1", "takeall_noedit", "open");
 				break;
